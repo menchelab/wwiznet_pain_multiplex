@@ -1,4 +1,4 @@
-id	gene	layer_c	layer_index_n	is_seed_c	rwr_score_n	degree_n	intra_degree_n	inter_degree_n	n_layers_with_gene_n	rwr_in_layer_n	x_stack	y_stack	z_stack	x_aligned	y_aligned	z_aligned
+id	gene_c	layer_c	layer_index_n	is_seed_c	rwr_score_n	degree_n	intra_degree_n	inter_degree_n	n_layers_with_gene_n	rwr_in_layer_n	x_stack	y_stack	z_stack	x_aligned	y_aligned	z_aligned
 A-PEP.CHRNA7_SLC18A3::PLXNA4	PLXNA4	A-PEP.CHRNA7_SLC18A3	10	non_seed	2.963607995137572e-05	4	2	2	2	2.963607995137572e-05	-4.1125	2.3144	80.0	-0.4185	3.8527	80.0
 Ab-LTMR.CCKAR::DHRS7	DHRS7	Ab-LTMR.CCKAR	15	non_seed	8.77122695229865e-05	7	7	0	6	4.671531085886382e-05	2.3885	-3.3709	120.0	-1.8585	1.8617	120.0
 C-LTMR.CDH9::RPRM	RPRM	C-LTMR.CDH9	18	non_seed	0.0001018588022061	9	9	0	7	0.0001018588022061	-1.6901	0.5343	144.0	-1.4191	0.9771	144.0
