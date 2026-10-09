@@ -1,0 +1,1143 @@
+########################################################################
+# cmd: run_layouts.py -i tmp/data/pain_enriched -o tmp/runs --entity-column gene --layer-order-strategy entity --feature-column GO_Biological_Process_2025_a,Reactome_Pathways_2024_a --focus-column is_seed_c --focus-value seed --score-column rwr_in_layer_n --edge-type-from-nodes layer_c
+# started: 2026-10-08T18:10:33+00:00
+# cwd: /mnt/c/Users/john/ines_ww_ml/multilayer_layout_experiments
+# python: /home/ph/miniforge3/envs/mlayout/bin/python (3.12.15)
+# input: /mnt/c/Users/john/ines_ww_ml/multilayer_layout_experiments/tmp/data/pain_enriched
+# output: /mnt/c/Users/john/ines_ww_ml/multilayer_layout_experiments/tmp/runs
+# graph: nodes=9940 edges=41207 components=1 giant=9940 isolated=0
+# columns: id=id layer=layer_c type=type_a features=GO_Biological_Process_2025_a,Reactome_Pathways_2024_a entity=gene focus=is_seed_c score=rwr_in_layer_n source=source target=target edge_type=edge_type_c edge_type_from=layer_c
+# layers: layer_c order=Ab-LTMR.CCKAR,Ab-LTMR.LGI2,Ab-LTMR.NSG2,Ab-LTMR.ETV1,A-Propr.HAPLN4,A-PEP.NTRK3_S100A16,A-PEP.SCGN_ADRA2C,A-PEP.CHRNA7_SLC18A3,ATF3,A-Propr.PCDH8,A-Propr.EPHA3,C-PEP.TAC1_CHRNA3,C-PEP.TAC1_CACNG5,C-LTMR.CDH9,C-Thermo.TRPM8,C-PEP.ADORA2B,A-PEP.KIT,A-LTMR.TAC3,C-Thermo.RXFP1,C-NP.SST,C-NP.MRGPRX1_MRGPRX4,C-NP.MRGPRX1_GFRA2 (Ab-LTMR.CCKAR=401, Ab-LTMR.LGI2=402, Ab-LTMR.NSG2=396, Ab-LTMR.ETV1=327, A-Propr.HAPLN4=400, A-PEP.NTRK3_S100A16=419, A-PEP.SCGN_ADRA2C=369, A-PEP.CHRNA7_SLC18A3=433, ATF3=414, A-Propr.PCDH8=432, A-Propr.EPHA3=443, C-PEP.TAC1_CHRNA3=514, C-PEP.TAC1_CACNG5=515, C-LTMR.CDH9=393, C-Thermo.TRPM8=514, C-PEP.ADORA2B=565, A-PEP.KIT=499, A-LTMR.TAC3=546, C-Thermo.RXFP1=538, C-NP.SST=562, C-NP.MRGPRX1_MRGPRX4=468, C-NP.MRGPRX1_GFRA2=390) [inferred: node count descending, ties by first appearance]
+# entities (gene): 4203 distinct, 2464 occur in >=2 nodes (8201 nodes), max 13 copies
+# edge types (layer_c endpoint pair): 253 distinct: C-NP.SST--C-NP.SST=2432, C-PEP.ADORA2B--C-PEP.ADORA2B=2220, C-Thermo.RXFP1--C-Thermo.RXFP1=2218, A-LTMR.TAC3--A-LTMR.TAC3=2087, A-PEP.KIT--A-PEP.KIT=2080, A-PEP.CHRNA7_SLC18A3--A-PEP.CHRNA7_SLC18A3=1992, C-PEP.TAC1_CACNG5--C-PEP.TAC1_CACNG5=1962, ATF3--ATF3=1931, ... 245 more
+# gpu: on (NVIDIA GeForce RTX 5090; cuGraph 25.10.01, cuML 25.10.00); cpu workers: 16 (not bit-reproducible)
+# selected: 122 layout(s): tiles_stack_free_1, tiles_grid_free_1, tiles_pages_free_1, tiles_sphere_free_1, tiles_hemi_free_1, tiles_helix_free_1, tiles_meta_free_1, tiles_stack_half_1, tiles_stack_aligned_1, tiles_sphere_free_rim_1, tiles_hemi_free_rim_1, tiles_cyl3_free_1, tiles_sphere_free_curved_1, tiles_hemi_free_curved_1, tiles_ring_free_curved_1, tiles_cyl2_free_curved_1, tiles_cyl3_free_curved_1, tiles_sphere_aligned_curved_1, tiles_hemi_free_sradial_1, tiles_cyl2_free_sradial_curved_1, tiles_hemi_free_slift_1, tiles_star_free_1, tiles_grid_free_gib_1, tiles_hemi_free_gib_1, tiles_star_free_gib_1, supra_w0p1_1, supra_w1_1, supra_w10_1, columns_w1_1, columns_w10_1, backbone_e03_1, backbone_e05_1, feature_GO_Biological_Process_2025_a_landscape_1, feature_GO_Biological_Process_2025_a_fa2_1, feature_Reactome_Pathways_2024_a_landscape_1, feature_Reactome_Pathways_2024_a_fa2_1, feature_all_landscape_1, feature_all_fa2_1, enrich_GO_Biological_Process_2025_a_magnets_1, enrich_GO_Biological_Process_2025_a_shells_1, enrich_GO_Biological_Process_2025_a_termcols_1, enrich_GO_Biological_Process_2025_a_funcstack_1, enrich_GO_Biological_Process_2025_a_blend25_1, enrich_GO_Biological_Process_2025_a_blend50_1, enrich_GO_Biological_Process_2025_a_blend75_1, enrich_GO_Biological_Process_2025_a_height_1, enrich_GO_Biological_Process_2025_a_snf_1, enrich_GO_Biological_Process_2025_a_hyper_1, enrich_GO_Biological_Process_2025_a_umapand_1, enrich_Reactome_Pathways_2024_a_magnets_1, enrich_Reactome_Pathways_2024_a_shells_1, enrich_Reactome_Pathways_2024_a_termcols_1, enrich_Reactome_Pathways_2024_a_funcstack_1, enrich_Reactome_Pathways_2024_a_blend25_1, enrich_Reactome_Pathways_2024_a_blend50_1, enrich_Reactome_Pathways_2024_a_blend75_1, enrich_Reactome_Pathways_2024_a_height_1, enrich_Reactome_Pathways_2024_a_snf_1, enrich_Reactome_Pathways_2024_a_hyper_1, enrich_Reactome_Pathways_2024_a_umapand_1, enrich_all_magnets_1, enrich_all_shells_1, enrich_all_termcols_1, enrich_all_funcstack_1, enrich_all_blend25_1, enrich_all_blend50_1, enrich_all_blend75_1, enrich_all_height_1, enrich_all_snf_1, enrich_all_hyper_1, enrich_all_umapand_1, graphdr_tsne_1, graphdr_tsne_x4_1, graphdr_tsne_hop3_1, n2vred_trimap_bal_1, n2vred_hnne_bal_1, n2vred_localmap_bal_1, focus_shell_1, focus_geo_1, focus_geobands_1, focus_fisheye_1, focus_hyp_1, focus_core_1, focus_tree_1, engine_tfdp_free_1, engine_tfdp_shells_1, engine_stress_free_1, engine_tfdp_sphere_1, joint_suprarwr_1, joint_suprarwr_w10_1, alignedumap_r001_1, alignedumap_r1_1, geom_terrain_1, geom_terraintiles_1, geom_hilbertlayer_1, geom_dome_1, geom_domes_1, geom_nested_1, geom_nestedlayer_1, geom_mapper_1, sumap_layer_1, sumap_community_1, sumap_theme_1, spokes_degree_1, spokes_degree_needle_1, spokes_score_1, fa2_1, fa2_2, fa2_3, fa2sep_1, topobet_1, n2vbal_1, n2vbfs_1, fa2spectral_1, community_1, n2vbal_pacmap_1, n2vdfs_pacmap_1, rwr_1, metapath_1, domaintouch_1, fa2rarity_1, n2vbal_tsne_1
+# seeded tmp/runs/run_20261008-201032/nodes.tsv from tmp/data/pain_enriched/nodes.tsv
+# copied tmp/data/pain_enriched/edges.tsv -> tmp/runs/run_20261008-201032/edges.tsv
+########################################################################
+
+[2026-10-08T18:10:54+00:00] base=tiles_stack_free_1 status=OK elapsed=20.5s
+  method: Tile layout (tiles_stack_free_1): one flat linlog layout per layer, stack, 22 planes, gap 0.095 (total height <= 1.0 x tile diameter); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'stack', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 2 near-coincident nodes separated
+
+[2026-10-08T18:10:56+00:00] base=tiles_grid_free_1 status=OK elapsed=2.4s
+  method: Tile layout (tiles_grid_free_1): one flat linlog layout per layer, grid of 3x3 stacks, 3 layers each (consecutive layers share a stack); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'grid', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 420 near-coincident nodes separated
+
+[2026-10-08T18:10:59+00:00] base=tiles_pages_free_1 status=OK elapsed=2.5s
+  method: Tile layout (tiles_pages_free_1): one flat linlog layout per layer, cylinder pages (rolodex) around the z axis, 22 pages in cyclic order; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'pages', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 348 near-coincident nodes separated
+
+[2026-10-08T18:11:01+00:00] base=tiles_sphere_free_1 status=OK elapsed=2.7s
+  method: Tile layout (tiles_sphere_free_1): one flat linlog layout per layer, sphere tiles (tangent planes) radius 5.73; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'sphere', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1829 near-coincident nodes separated
+
+[2026-10-08T18:11:03+00:00] base=tiles_hemi_free_1 status=OK elapsed=1.5s
+  method: Tile layout (tiles_hemi_free_1): one flat linlog layout per layer, hemisphere tiles (tangent planes) radius 8.20; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'hemi', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 2520 near-coincident nodes separated
+
+[2026-10-08T18:11:05+00:00] base=tiles_helix_free_1 status=OK elapsed=2.7s
+  method: Tile layout (tiles_helix_free_1): one flat linlog layout per layer, helix, 7 tiles per turn, radius 2.88, rise 0.370 per tile; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'helix', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 763 near-coincident nodes separated
+
+[2026-10-08T18:11:08+00:00] base=tiles_meta_free_1 status=OK elapsed=2.7s
+  method: Tile layout (tiles_meta_free_1): one flat linlog layout per layer, tiles at a 3D spring layout of the layer graph (cross-layer + shared-entity affinity), facing outward; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'meta', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1301 near-coincident nodes separated
+
+[2026-10-08T18:11:11+00:00] base=tiles_stack_half_1 status=OK elapsed=2.4s
+  method: Tile layout (tiles_stack_half_1): one flat linlog layout per layer, stack, 22 planes, gap 0.095 (total height <= 1.0 x tile diameter); alignment half via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'stack', 'alignment': 'half', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.5, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 106 near-coincident nodes separated
+
+[2026-10-08T18:11:13+00:00] base=tiles_stack_aligned_1 status=OK elapsed=2.1s
+  method: Tile layout (tiles_stack_aligned_1): one flat linlog layout per layer, stack, 22 planes, gap 0.095 (total height <= 1.0 x tile diameter); alignment aligned via entity reference; layer order auto; tiles not rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'stack', 'alignment': 'aligned', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 1.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 392 near-coincident nodes separated
+
+[2026-10-08T18:11:15+00:00] base=tiles_sphere_free_rim_1 status=OK elapsed=2.5s
+  method: Tile layout (tiles_sphere_free_rim_1): one flat linlog layout per layer, sphere tiles (tangent planes) radius 5.73; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated; rim placement (1051 cross-layer nodes moved to the tile rim)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'sphere', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'on', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': 0.8}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1544 near-coincident nodes separated
+
+[2026-10-08T18:11:18+00:00] base=tiles_hemi_free_rim_1 status=OK elapsed=2.8s
+  method: Tile layout (tiles_hemi_free_rim_1): one flat linlog layout per layer, hemisphere tiles (tangent planes) radius 8.20; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated; rim placement (1051 cross-layer nodes moved to the tile rim)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'hemi', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'on', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': 0.8}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 2188 near-coincident nodes separated
+
+[2026-10-08T18:11:20+00:00] base=tiles_cyl3_free_1 status=OK elapsed=2.4s
+  method: Tile layout (tiles_cyl3_free_1): one flat linlog layout per layer, cylinder, 3 rows x 8 tiles facing outward, radius 3.27; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'cyl3', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 812 near-coincident nodes separated
+
+[2026-10-08T18:11:23+00:00] base=tiles_sphere_free_curved_1 status=OK elapsed=2.5s
+  method: Tile layout (tiles_sphere_free_curved_1): one flat linlog layout per layer, sphere tiles (tangent planes) radius 5.73; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; tiles curved onto the sphere surface (radius 5.73); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'sphere', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'curved', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1815 near-coincident nodes separated
+
+[2026-10-08T18:11:26+00:00] base=tiles_hemi_free_curved_1 status=OK elapsed=3.0s
+  method: Tile layout (tiles_hemi_free_curved_1): one flat linlog layout per layer, hemisphere tiles (tangent planes) radius 8.20; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; tiles curved onto the sphere surface (radius 8.20); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'hemi', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'curved', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 2506 near-coincident nodes separated
+
+[2026-10-08T18:11:28+00:00] base=tiles_ring_free_curved_1 status=OK elapsed=2.4s
+  method: Tile layout (tiles_ring_free_curved_1): one flat linlog layout per layer, ring of 22 tiles facing outward, radius 8.78; tiles curved onto the cylinder surface (radius 8.78); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'ring', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'curved', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 3453 near-coincident nodes separated
+
+[2026-10-08T18:11:31+00:00] base=tiles_cyl2_free_curved_1 status=OK elapsed=2.2s
+  method: Tile layout (tiles_cyl2_free_curved_1): one flat linlog layout per layer, cylinder, 2 rows x 11 tiles facing outward, radius 4.44; tiles curved onto the cylinder surface (radius 4.44); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'cyl2', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'curved', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1251 near-coincident nodes separated
+
+[2026-10-08T18:11:33+00:00] base=tiles_cyl3_free_curved_1 status=OK elapsed=2.2s
+  method: Tile layout (tiles_cyl3_free_curved_1): one flat linlog layout per layer, cylinder, 3 rows x 8 tiles facing outward, radius 3.27; tiles curved onto the cylinder surface (radius 3.27); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'cyl3', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'curved', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 805 near-coincident nodes separated
+
+[2026-10-08T18:11:33+00:00] base=tiles_sphere_aligned_curved_1 status=OK elapsed=0.8s
+  method: Tile layout (tiles_sphere_aligned_curved_1): one flat linlog layout per layer, sphere tiles (tangent planes) radius 5.73; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; tiles curved onto the sphere surface (radius 5.73); alignment aligned via entity reference; layer order auto; tiles not rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'sphere', 'alignment': 'aligned', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'curved', 'alignment_value': 1.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 3212 near-coincident nodes separated
+
+[2026-10-08T18:11:36+00:00] base=tiles_hemi_free_sradial_1 status=OK elapsed=2.7s
+  method: Tile layout (tiles_hemi_free_sradial_1): one flat linlog layout per layer, hemisphere tiles (tangent planes) radius 8.20; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'hemi', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'radial', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 2604 near-coincident nodes separated
+
+[2026-10-08T18:11:39+00:00] base=tiles_cyl2_free_sradial_curved_1 status=OK elapsed=2.5s
+  method: Tile layout (tiles_cyl2_free_sradial_curved_1): one flat linlog layout per layer, cylinder, 2 rows x 11 tiles facing outward, radius 4.44; tiles curved onto the cylinder surface (radius 4.44); alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'cyl2', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'radial', 'surface': 'curved', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1416 near-coincident nodes separated
+
+[2026-10-08T18:11:42+00:00] base=tiles_hemi_free_slift_1 status=OK elapsed=3.2s
+  method: Tile layout (tiles_hemi_free_slift_1): one flat linlog layout per layer, hemisphere tiles (tangent planes) radius 8.20; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'hemi', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'lift', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 530 near-coincident nodes separated
+
+[2026-10-08T18:11:45+00:00] base=tiles_star_free_1 status=OK elapsed=3.0s
+  method: Tile layout (tiles_star_free_1): one flat linlog layout per layer, star: hub layer ATF3 in the centre, 21 layers on two terraced rings around it (inner = most tied to the hub, rings raised 0.3 x their radius: a bowl), cyclic seriation order; alignment free via entity reference; layer order auto; tiles rotated
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); reference: entity graph (4203 entities): cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'geometry': 'star', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'linlog', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 1350 near-coincident nodes separated
+
+[2026-10-08T18:12:02+00:00] base=tiles_grid_free_gib_1 status=OK elapsed=17.2s
+  method: Tile layout (tiles_grid_free_gib_1): one flat gib layout per layer, grid of 3x3 stacks, 3 layers each (consecutive layers share a stack); alignment free via entity reference; layer order auto; tiles rotated
+  call: group-in-a-box: leidenalg modularity communities (10 boxes) in a squarified treemap, nx.spring_layout per box per layer tile (engine gib); reference: entity graph (4203 entities): group-in-a-box: leidenalg modularity communities (11 boxes) in a squarified treemap, nx.spring_layout per box
+  params: {'geometry': 'grid', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'gib', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 2 near-coincident nodes separated
+
+[2026-10-08T18:12:05+00:00] base=tiles_hemi_free_gib_1 status=OK elapsed=2.7s
+  method: Tile layout (tiles_hemi_free_gib_1): one flat gib layout per layer, hemisphere tiles (tangent planes) radius 8.20; layers assigned to slots by quadratic assignment on cross-layer/shared-entity affinity; alignment free via entity reference; layer order auto; tiles rotated
+  call: group-in-a-box: leidenalg modularity communities (10 boxes) in a squarified treemap, nx.spring_layout per box per layer tile (engine gib); reference: entity graph (4203 entities): group-in-a-box: leidenalg modularity communities (11 boxes) in a squarified treemap, nx.spring_layout per box
+  params: {'geometry': 'hemi', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'gib', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 420 near-coincident nodes separated
+
+[2026-10-08T18:12:06+00:00] base=tiles_star_free_gib_1 status=OK elapsed=1.1s
+  method: Tile layout (tiles_star_free_gib_1): one flat gib layout per layer, star: hub layer ATF3 in the centre, 21 layers on two terraced rings around it (inner = most tied to the hub, rings raised 0.3 x their radius: a bowl), cyclic seriation order; alignment free via entity reference; layer order auto; tiles rotated
+  call: group-in-a-box: leidenalg modularity communities (10 boxes) in a squarified treemap, nx.spring_layout per box per layer tile (engine gib); reference: entity graph (4203 entities): group-in-a-box: leidenalg modularity communities (11 boxes) in a squarified treemap, nx.spring_layout per box
+  params: {'geometry': 'star', 'alignment': 'free', 'order': ('C-Thermo.TRPM8', 'C-PEP.TAC1_CACNG5', 'C-PEP.TAC1_CHRNA3', 'C-NP.MRGPRX1_GFRA2', 'C-NP.MRGPRX1_MRGPRX4', 'C-PEP.ADORA2B', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-LTMR.CDH9', 'A-PEP.KIT', 'A-LTMR.TAC3', 'ATF3', 'A-PEP.CHRNA7_SLC18A3', 'A-PEP.NTRK3_S100A16', 'A-Propr.EPHA3', 'A-Propr.PCDH8', 'A-Propr.HAPLN4', 'A-PEP.SCGN_ADRA2C', 'Ab-LTMR.CCKAR', 'Ab-LTMR.NSG2', 'Ab-LTMR.LGI2', 'Ab-LTMR.ETV1'), 'engine': 'gib', 'rotate': 'on', 'rim': 'off', 'tilt': '0', 'score': 'none', 'surface': 'flat', 'alignment_value': 0.0, 'tile_gap': 0.25, 'tile_fa2_iter': 300, 'rim_strength': None}
+  seed: 42
+  weighting: unweighted within layers; cross-layer edges and entity copies only steer tile rotation, rim and alignment
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on a ring around their tile; 43 near-coincident nodes separated
+
+[2026-10-08T18:12:10+00:00] base=supra_w0p1_1 status=OK elapsed=3.9s
+  method: Supra-Laplacian spectral embedding, copy coupling omega=0.1, reducer umap
+  call: scipy eigsh(D^-1/2 W D^-1/2, k=17, which='LA') on the supra-graph (9940 copies) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'omega': 0.1, 'reducer': 'umap', 'laplacian_eigenvalues': [-0.0, 0.01308, 0.02155, 0.02573, 0.02666, 0.02969], 'weighting': 'intra 1, cross-layer 1, copy coupling omega per copy'}
+  seed: 42
+  weighting: intra 1, cross-layer 1, copy coupling omega per copy
+  nodes=9940 edges=41207
+  fallback: 0 copies outside the supra-graph's giant component on the fallback shell; 1294 near-coincident nodes separated
+
+[2026-10-08T18:12:14+00:00] base=supra_w1_1 status=OK elapsed=4.0s
+  method: Supra-Laplacian spectral embedding, copy coupling omega=1, reducer umap
+  call: scipy eigsh(D^-1/2 W D^-1/2, k=17, which='LA') on the supra-graph (9940 copies) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'omega': 1.0, 'reducer': 'umap', 'laplacian_eigenvalues': [-0.0, 0.0322, 0.05054, 0.06302, 0.06932, 0.07984], 'weighting': 'intra 1, cross-layer 1, copy coupling omega per copy'}
+  seed: 42
+  weighting: intra 1, cross-layer 1, copy coupling omega per copy
+  nodes=9940 edges=41207
+  fallback: 0 copies outside the supra-graph's giant component on the fallback shell; 271 near-coincident nodes separated
+
+[2026-10-08T18:12:17+00:00] base=supra_w10_1 status=OK elapsed=3.6s
+  method: Supra-Laplacian spectral embedding, copy coupling omega=10, reducer umap
+  call: scipy eigsh(D^-1/2 W D^-1/2, k=17, which='LA') on the supra-graph (9940 copies) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'omega': 10.0, 'reducer': 'umap', 'laplacian_eigenvalues': [-0.0, 0.02919, 0.03024, 0.03681, 0.04358, 0.04477], 'weighting': 'intra 1, cross-layer 1, copy coupling omega per copy'}
+  seed: 42
+  weighting: intra 1, cross-layer 1, copy coupling omega per copy
+  nodes=9940 edges=41207
+  fallback: 0 copies outside the supra-graph's giant component on the fallback shell; 467 near-coincident nodes separated
+
+[2026-10-08T18:12:28+00:00] base=columns_w1_1 status=OK elapsed=10.6s
+  method: Multilayer community columns: Leiden (RBConfiguration, resolution 1) on the supra-graph with copy coupling omega=1; one xy disc per community, copies share xy, z = layer
+  call: leidenalg.find_partition(supra, RBConfigurationVertexPartition, weights, resolution_parameter=1, seed=42) -> spring_layout(community graph) + disc packing -> spring_layout per community (entity-collapsed)
+  params: {'omega': 1.0, 'resolution': 1.0, 'n_communities': 22, 'largest_communities': [612, 574, 536, 525, 520, 512, 506, 495], 'layers_spanned_top': [22, 22, 22, 18, 18, 15, 13, 11]}
+  seed: 42
+  weighting: supra-graph: intra 1, cross-layer 1, copy coupling omega per copy
+  nodes=9940 edges=41207
+  fallback: isolated copies are singleton communities; 85 near-coincident nodes separated
+
+[2026-10-08T18:12:33+00:00] base=columns_w10_1 status=OK elapsed=5.0s
+  method: Multilayer community columns: Leiden (RBConfiguration, resolution 1) on the supra-graph with copy coupling omega=10; one xy disc per community, copies share xy, z = layer
+  call: leidenalg.find_partition(supra, RBConfigurationVertexPartition, weights, resolution_parameter=1, seed=42) -> spring_layout(community graph) + disc packing -> spring_layout per community (entity-collapsed)
+  params: {'omega': 10.0, 'resolution': 1.0, 'n_communities': 47, 'largest_communities': [660, 630, 566, 520, 509, 468, 437, 405], 'layers_spanned_top': [22, 22, 22, 22, 22, 22, 22, 21]}
+  seed: 42
+  weighting: supra-graph: intra 1, cross-layer 1, copy coupling omega per copy
+  nodes=9940 edges=41207
+  fallback: isolated copies are singleton communities; 24 near-coincident nodes separated
+
+[2026-10-08T18:12:36+00:00] base=backbone_e03_1 status=OK elapsed=3.3s
+  method: Backbone layout: linlog FA2 on the strong-tie backbone (top ceil(deg^0.3) edges per node by neighbourhood Jaccard + maximum spanning forest), z-stacked by layer
+  call: backbone_graph(G, exponent=0.3) -> cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'exponent': 0.3, 'engine': 'linlog', 'edges_kept': 16087, 'edges_total': 41207, 'share_kept': 0.39, 'forest_edges': 9939}
+  seed: 42
+  weighting: unweighted FA2 on the backbone; the score only selects edges
+  nodes=9940 edges=41207
+  fallback: 0 backbone-isolated nodes ring-placed per layer; 6190 near-coincident separated
+
+[2026-10-08T18:12:41+00:00] base=backbone_e05_1 status=OK elapsed=4.9s
+  method: Backbone layout: linlog FA2 on the strong-tie backbone (top ceil(deg^0.5) edges per node by neighbourhood Jaccard + maximum spanning forest), z-stacked by layer
+  call: backbone_graph(G, exponent=0.5) -> cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'exponent': 0.5, 'engine': 'linlog', 'edges_kept': 20693, 'edges_total': 41207, 'share_kept': 0.502, 'forest_edges': 9939}
+  seed: 42
+  weighting: unweighted FA2 on the backbone; the score only selects edges
+  nodes=9940 edges=41207
+  fallback: 0 backbone-isolated nodes ring-placed per layer; 7016 near-coincident separated
+
+[2026-10-08T18:12:46+00:00] base=feature_GO_Biological_Process_2025_a_landscape_1 status=OK elapsed=4.4s
+  method: Feature landscape: TF-IDF GO_Biological_Process_2025_a terms (unannotated nodes take their neighbours' mean profile, 1-2 hops) -> TruncatedSVD -> UMAP 3D
+  call: TruncatedSVD(n_components=50) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'source': 'GO_Biological_Process_2025_a', 'vocab_size': 5077, 'svd_components': 50}
+  seed: 42
+  weighting: none (feature-space embedding)
+  nodes=9940 edges=41207
+  fallback: 8547 nodes annotated directly, 1393 by neighbour propagation, 0 on the fallback shell; 5420 near-coincident separated
+
+[2026-10-08T18:12:49+00:00] base=feature_GO_Biological_Process_2025_a_fa2_1 status=OK elapsed=3.3s
+  method: ForceAtlas2 with feature-boosted edge weights: real edges' attraction raised by the Jaccard similarity of the endpoints' GO_Biological_Process_2025_a terms, z-stacked
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42, weight='feature_weight') [GPU, not bit-reproducible run to run]
+  params: {'source': 'GO_Biological_Process_2025_a', 'feature_boost': 3.0, 'max_iter': 100}
+  seed: 42
+  weighting: attraction weight = 1 + 3.0 * Jaccard(endpoint term sets)
+  nodes=9940 edges=41207
+  fallback: 14104/41207 edges boosted; 0 isolated nodes ring-placed per layer
+
+[2026-10-08T18:12:54+00:00] base=feature_Reactome_Pathways_2024_a_landscape_1 status=OK elapsed=4.8s
+  method: Feature landscape: TF-IDF Reactome_Pathways_2024_a terms (unannotated nodes take their neighbours' mean profile, 1-2 hops) -> TruncatedSVD -> UMAP 3D
+  call: TruncatedSVD(n_components=50) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'source': 'Reactome_Pathways_2024_a', 'vocab_size': 2025, 'svd_components': 50}
+  seed: 42
+  weighting: none (feature-space embedding)
+  nodes=9940 edges=41207
+  fallback: 7227 nodes annotated directly, 2710 by neighbour propagation, 3 on the fallback shell; 8200 near-coincident separated
+
+[2026-10-08T18:12:59+00:00] base=feature_Reactome_Pathways_2024_a_fa2_1 status=OK elapsed=5.5s
+  method: ForceAtlas2 with feature-boosted edge weights: real edges' attraction raised by the Jaccard similarity of the endpoints' Reactome_Pathways_2024_a terms, z-stacked
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42, weight='feature_weight') [GPU, not bit-reproducible run to run]
+  params: {'source': 'Reactome_Pathways_2024_a', 'feature_boost': 3.0, 'max_iter': 100}
+  seed: 42
+  weighting: attraction weight = 1 + 3.0 * Jaccard(endpoint term sets)
+  nodes=9940 edges=41207
+  fallback: 18508/41207 edges boosted; 0 isolated nodes ring-placed per layer
+
+[2026-10-08T18:13:04+00:00] base=feature_all_landscape_1 status=OK elapsed=4.6s
+  method: Feature landscape: TF-IDF all terms (unannotated nodes take their neighbours' mean profile, 1-2 hops) -> TruncatedSVD -> UMAP 3D
+  call: TruncatedSVD(n_components=50) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'source': 'all', 'vocab_size': 7102, 'svd_components': 50}
+  seed: 42
+  weighting: none (feature-space embedding)
+  nodes=9940 edges=41207
+  fallback: 9226 nodes annotated directly, 714 by neighbour propagation, 0 on the fallback shell; 5517 near-coincident separated
+
+[2026-10-08T18:13:06+00:00] base=feature_all_fa2_1 status=OK elapsed=2.6s
+  method: ForceAtlas2 with feature-boosted edge weights: real edges' attraction raised by the Jaccard similarity of the endpoints' all terms, z-stacked
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42, weight='feature_weight') [GPU, not bit-reproducible run to run]
+  params: {'source': 'all', 'feature_boost': 3.0, 'max_iter': 100}
+  seed: 42
+  weighting: attraction weight = 1 + 3.0 * Jaccard(endpoint term sets)
+  nodes=9940 edges=41207
+  fallback: 22191/41207 edges boosted; 0 isolated nodes ring-placed per layer
+
+[2026-10-08T18:13:11+00:00] base=enrich_GO_Biological_Process_2025_a_magnets_1 status=OK elapsed=4.7s
+  method: Term magnets (magnets): 24 GO_Biological_Process_2025_a themes as anchors on a sphere (QAP by similarity); nodes = harmonic mix of graph neighbours and their anchors; radii spread to fill the ball
+  call: enrichment.enrich -> scipy.optimize.quadratic_assignment (anchors) -> scipy.sparse.linalg.spsolve
+  params: {'source': 'GO_Biological_Process_2025_a', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['Translation (GO:0006412)', 'Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775)', 'Regulation of DNA-templated Transcription (GO:0006355)', 'Protein Phosphorylation (GO:0006468)', 'ATP Metabolic Process (GO:0046034)', 'ATP Biosynthetic Process (GO:0006754)', 'Mitochondrial Respiratory Chain Complex Assembly (GO:0033108)', 'Substantia Nigra Development (GO:0021762)', 'Cellular Response to Superoxide (GO:0071451)', 'Intracellular Signaling Cassette (GO:0141124)', 'rRNA Metabolic Process (GO:0016072)', 'Toll-Like Receptor 4 Signaling Pathway (GO:0034142)', 'Synaptic Vesicle Recycling (GO:0036465)', 'RISC Complex Assembly (GO:0070922)', 'Regulation of Response to External Stimulus (GO:0032101)', 'Regulation of Apoptotic Process (GO:0042981)', 'Cellular Response to Interleukin-1 (GO:0071347)', 'Response to Unfolded Protein (GO:0006986)', 'Modification-Dependent Macromolecule Catabolic Process (GO:0043632)', 'Inflammatory Response (GO:0006954)', 'Interferon-Mediated Signaling Pathway (GO:0140888)', 'Potassium Ion Transport (GO:0006813)', 'Granulocyte Chemotaxis (GO:0071621)', 'Monoatomic Anion Transmembrane Transport (GO:0098656)'], 'anchor_sizes': [15, 13, 63, 17, 11, 1, 3, 1, 7, 6, 2, 14, 7, 10, 2, 27, 4, 4, 2, 1, 7, 3, 3, 10], 'anchor_weight': 30.0, 'n_with_anchor_signal': 9936}
+  seed: 42
+  weighting: graph edges 1, term anchors 30 (split over a node's terms)
+  nodes=9940 edges=41207
+  fallback: 4 nodes without term signal placed by their neighbours only; 565 near-coincident separated
+
+[2026-10-08T18:13:15+00:00] base=enrich_GO_Biological_Process_2025_a_shells_1 status=OK elapsed=3.7s
+  method: Term magnets (shells): 24 GO_Biological_Process_2025_a themes as anchors on a sphere (QAP by similarity); nodes = harmonic mix of graph neighbours and their anchors; each layer a concentric shell (copies on one radius)
+  call: enrichment.enrich -> scipy.optimize.quadratic_assignment (anchors) -> scipy.sparse.linalg.spsolve
+  params: {'source': 'GO_Biological_Process_2025_a', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['Translation (GO:0006412)', 'Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775)', 'Regulation of DNA-templated Transcription (GO:0006355)', 'Protein Phosphorylation (GO:0006468)', 'ATP Metabolic Process (GO:0046034)', 'ATP Biosynthetic Process (GO:0006754)', 'Mitochondrial Respiratory Chain Complex Assembly (GO:0033108)', 'Substantia Nigra Development (GO:0021762)', 'Cellular Response to Superoxide (GO:0071451)', 'Intracellular Signaling Cassette (GO:0141124)', 'rRNA Metabolic Process (GO:0016072)', 'Toll-Like Receptor 4 Signaling Pathway (GO:0034142)', 'Synaptic Vesicle Recycling (GO:0036465)', 'RISC Complex Assembly (GO:0070922)', 'Regulation of Response to External Stimulus (GO:0032101)', 'Regulation of Apoptotic Process (GO:0042981)', 'Cellular Response to Interleukin-1 (GO:0071347)', 'Response to Unfolded Protein (GO:0006986)', 'Modification-Dependent Macromolecule Catabolic Process (GO:0043632)', 'Inflammatory Response (GO:0006954)', 'Interferon-Mediated Signaling Pathway (GO:0140888)', 'Potassium Ion Transport (GO:0006813)', 'Granulocyte Chemotaxis (GO:0071621)', 'Monoatomic Anion Transmembrane Transport (GO:0098656)'], 'anchor_sizes': [15, 13, 63, 17, 11, 1, 3, 1, 7, 6, 2, 14, 7, 10, 2, 27, 4, 4, 2, 1, 7, 3, 3, 10], 'anchor_weight': 30.0, 'n_with_anchor_signal': 9936}
+  seed: 42
+  weighting: graph edges 1, term anchors 30 (split over a node's terms)
+  nodes=9940 edges=41207
+  fallback: 4 nodes without term signal placed by their neighbours only; 474 near-coincident separated
+
+[2026-10-08T18:13:29+00:00] base=enrich_GO_Biological_Process_2025_a_termcols_1 status=OK elapsed=14.1s
+  method: Term columns: 24 GO_Biological_Process_2025_a themes, each an xy disc shared by all layers; node -> disc of the anchor holding its most significant term in its layer; z = layer
+  call: enrichment.enrich -> method_columns.pillar_coords
+  params: {'source': 'GO_Biological_Process_2025_a', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['Translation (GO:0006412)', 'Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775)', 'Regulation of DNA-templated Transcription (GO:0006355)', 'Protein Phosphorylation (GO:0006468)', 'ATP Metabolic Process (GO:0046034)', 'ATP Biosynthetic Process (GO:0006754)', 'Mitochondrial Respiratory Chain Complex Assembly (GO:0033108)', 'Substantia Nigra Development (GO:0021762)', 'Cellular Response to Superoxide (GO:0071451)', 'Intracellular Signaling Cassette (GO:0141124)', 'rRNA Metabolic Process (GO:0016072)', 'Toll-Like Receptor 4 Signaling Pathway (GO:0034142)', 'Synaptic Vesicle Recycling (GO:0036465)', 'RISC Complex Assembly (GO:0070922)', 'Regulation of Response to External Stimulus (GO:0032101)', 'Regulation of Apoptotic Process (GO:0042981)', 'Cellular Response to Interleukin-1 (GO:0071347)', 'Response to Unfolded Protein (GO:0006986)', 'Modification-Dependent Macromolecule Catabolic Process (GO:0043632)', 'Inflammatory Response (GO:0006954)', 'Interferon-Mediated Signaling Pathway (GO:0140888)', 'Potassium Ion Transport (GO:0006813)', 'Granulocyte Chemotaxis (GO:0071621)', 'Monoatomic Anion Transmembrane Transport (GO:0098656)'], 'group_sizes': {'other': 4748, 'Translation (GO:0006412)': 476, 'Regulation of DNA-templated Transcription (GO:0006355)': 1864, 'Monoatomic Anion Transmembrane Transport (GO:0098656)': 162, 'Intracellular Signaling Cassette (GO:0141124)': 150, 'Toll-Like Receptor 4 Signaling Pathway (GO:0034142)': 302, 'Protein Phosphorylation (GO:0006468)': 409, 'Cellular Response to Superoxide (GO:0071451)': 94, 'Potassium Ion Transport (GO:0006813)': 100, 'RISC Complex Assembly (GO:0070922)': 103, 'Inflammatory Response (GO:0006954)': 60, 'Regulation of Apoptotic Process (GO:0042981)': 573, 'Response to Unfolded Protein (GO:0006986)': 97, 'Cellular Response to Interleukin-1 (GO:0071347)': 52, 'Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0': 153, 'Substantia Nigra Development (GO:0021762)': 57, 'Granulocyte Chemotaxis (GO:0071621)': 125, 'Interferon-Mediated Signaling Pathway (GO:0140888)': 65, 'Regulation of Response to External Stimulus (GO:0032101)': 45, 'Mitochondrial Respiratory Chain Complex Assembly (GO:0033108': 24, 'ATP Metabolic Process (GO:0046034)': 126, 'rRNA Metabolic Process (GO:0016072)': 18, 'Synaptic Vesicle Recycling (GO:0036465)': 98, 'Modification-Dependent Macromolecule Catabolic Process (GO:0': 36, 'ATP Biosynthetic Process (GO:0006754)': 3}}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: 4748 nodes with no representative term in the 'other' disc; 866 near-coincident separated
+
+[2026-10-08T18:13:36+00:00] base=enrich_GO_Biological_Process_2025_a_funcstack_1 status=OK elapsed=6.9s
+  method: Function stack: one 2D GO_Biological_Process_2025_a function map for all layers (entities), z = layer
+  call: TF-IDF -> TruncatedSVD(32) -> mean per entity -> cuml.UMAP(n_components=2, metric='cosine') [GPU] -> layer_z_stack
+  params: {'source': 'GO_Biological_Process_2025_a', 'entities_mapped': 4203}
+  seed: 42
+  weighting: none (feature-space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal on a ring around the map; 609 near-coincident separated
+
+[2026-10-08T18:13:47+00:00] base=enrich_GO_Biological_Process_2025_a_blend25_1 status=OK elapsed=11.7s
+  method: Topology-function blend: UMAP 3D of [0.25 x node2vec (graph), 0.75 x GO_Biological_Process_2025_a term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'GO_Biological_Process_2025_a', 'alpha_graph': 0.25, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 1143 near-coincident separated
+
+[2026-10-08T18:13:51+00:00] base=enrich_GO_Biological_Process_2025_a_blend50_1 status=OK elapsed=3.8s
+  method: Topology-function blend: UMAP 3D of [0.5 x node2vec (graph), 0.5 x GO_Biological_Process_2025_a term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'GO_Biological_Process_2025_a', 'alpha_graph': 0.5, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 35 near-coincident separated
+
+[2026-10-08T18:13:55+00:00] base=enrich_GO_Biological_Process_2025_a_blend75_1 status=OK elapsed=4.3s
+  method: Topology-function blend: UMAP 3D of [0.75 x node2vec (graph), 0.25 x GO_Biological_Process_2025_a term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'GO_Biological_Process_2025_a', 'alpha_graph': 0.75, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 187 near-coincident separated
+
+[2026-10-08T18:13:59+00:00] base=enrich_GO_Biological_Process_2025_a_height_1 status=OK elapsed=3.1s
+  method: Enrichment height: free hemisphere tiles, nodes lifted by the rank of -log10 q of their best GO_Biological_Process_2025_a term in their own layer
+  call: enrichment.enrich -> layer_arrange.arrange(hemisphere, lift) [cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog)]
+  params: {'source': 'GO_Biological_Process_2025_a', 'lifted_nodes': 8407, 'lift_fraction': 0.6}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without tested terms stay on their tile; 532 near-coincident separated
+
+[2026-10-08T18:14:17+00:00] base=enrich_GO_Biological_Process_2025_a_snf_1 status=OK elapsed=18.6s
+  method: Similarity network fusion of 2 views (graph, GO_Biological_Process_2025_a), t-SNE 3D on the fused affinity
+  call: method_fusion._snf_fuse (PyTorch on cuda; K=20, mu=0.5, t=20) -> openTSNE PrecomputedAffinities (top 30)
+  params: {'source': 'GO_Biological_Process_2025_a', 'views': ['graph', 'GO_Biological_Process_2025_a'], 'K': 20, 'mu': 0.5, 'iterations': 20, 'signal': {'graph': 9940, 'GO_Biological_Process_2025_a': 9940}}
+  seed: 42
+  weighting: scaled exponential affinities per view, cross-diffused
+  nodes=9940 edges=41207
+  fallback: nodes without signal in a view use the graph view there; 2982 near-coincident separated
+
+[2026-10-08T18:14:20+00:00] base=enrich_GO_Biological_Process_2025_a_hyper_1 status=OK elapsed=3.2s
+  method: Hypergraph + graph spectral embedding: 4840 GO_Biological_Process_2025_a terms as hyperedges, beta 1, top 16 eigenvectors, UMAP 3D
+  call: scipy.sparse.linalg.eigsh(LinearOperator, k=17, which='LA') -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'GO_Biological_Process_2025_a', 'beta': 1.0, 'dim': 16, 'hyperedges': 4840, 'nodes_in_hyperedges': 8543, 'eigenvalues': [0.9272, 0.7528, 0.7046, 0.618, 0.5832, 0.5707, 0.5567, 0.5458, 0.5408, 0.5343, 0.5327, 0.5316, 0.5301, 0.528, 0.5245, 0.5203, 0.5179]}
+  seed: 42
+  weighting: normalised adjacency + normalised hypergraph operator (Zhou et al. 2006)
+  nodes=9940 edges=41207
+  fallback: 1397 nodes without terms placed by the graph part only; 64 near-coincident separated
+
+[2026-10-08T18:14:56+00:00] base=enrich_GO_Biological_Process_2025_a_umapand_1 status=OK elapsed=35.7s
+  method: UMAP model algebra: intersection (close in topology AND function) of the graph (node2vec) UMAP and the GO_Biological_Process_2025_a function UMAP
+  call: umap.UMAP(n_components=3).fit(graph) * umap.UMAP(...).fit(function)
+  params: {'source': 'GO_Biological_Process_2025_a', 'op': 'and', 'views': ['graph', 'GO_Biological_Process_2025_a']}
+  seed: 42
+  weighting: fuzzy simplicial set intersection / union
+  nodes=9940 edges=41207
+  fallback: nodes outside the node2vec giant component have a zero graph vector; 36 near-coincident separated
+
+[2026-10-08T18:15:01+00:00] base=enrich_Reactome_Pathways_2024_a_magnets_1 status=OK elapsed=4.8s
+  method: Term magnets (magnets): 24 Reactome_Pathways_2024_a themes as anchors on a sphere (QAP by similarity); nodes = harmonic mix of graph neighbours and their anchors; radii spread to fill the ball
+  call: enrichment.enrich -> scipy.optimize.quadratic_assignment (anchors) -> scipy.sparse.linalg.spsolve
+  params: {'source': 'Reactome_Pathways_2024_a', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['Translation', 'Aerobic Respiration and Respiratory Electron Transport', 'SARS-CoV-2-host Interactions', 'The Role of GTSE1 in G2 M Progression After G2 Checkpoint', 'HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in the Presence of Ligand', 'Selective Autophagy', 'TP53 Regulates Metabolic Genes', 'RHO GTPase Effectors', 'Bacterial Infection Pathways', 'TGFBR3 Expression', 'Nucleotide Excision Repair', 'Translocation of SLC2A4 (GLUT4) to the Plasma Membrane', 'Circadian Clock', 'L1CAM Interactions', 'Hemostasis', 'ESR-mediated Signaling', 'Potassium Channels', 'TGF-beta Receptor Signaling Activates SMADs', 'Intrinsic Pathway for Apoptosis', 'G Alpha (Q) Signalling Events', 'Toll-like Receptor Cascades', 'Gluconeogenesis', 'Activation of Gene Expression by SREBF (SREBP)', 'Regulation of NFE2L2 Gene Expression'], 'anchor_sizes': [46, 19, 27, 133, 16, 14, 15, 37, 16, 16, 31, 19, 10, 22, 91, 35, 9, 12, 3, 6, 94, 5, 8, 17], 'anchor_weight': 30.0, 'n_with_anchor_signal': 9935}
+  seed: 42
+  weighting: graph edges 1, term anchors 30 (split over a node's terms)
+  nodes=9940 edges=41207
+  fallback: 5 nodes without term signal placed by their neighbours only; 434 near-coincident separated
+
+[2026-10-08T18:15:05+00:00] base=enrich_Reactome_Pathways_2024_a_shells_1 status=OK elapsed=4.0s
+  method: Term magnets (shells): 24 Reactome_Pathways_2024_a themes as anchors on a sphere (QAP by similarity); nodes = harmonic mix of graph neighbours and their anchors; each layer a concentric shell (copies on one radius)
+  call: enrichment.enrich -> scipy.optimize.quadratic_assignment (anchors) -> scipy.sparse.linalg.spsolve
+  params: {'source': 'Reactome_Pathways_2024_a', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['Translation', 'Aerobic Respiration and Respiratory Electron Transport', 'SARS-CoV-2-host Interactions', 'The Role of GTSE1 in G2 M Progression After G2 Checkpoint', 'HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in the Presence of Ligand', 'Selective Autophagy', 'TP53 Regulates Metabolic Genes', 'RHO GTPase Effectors', 'Bacterial Infection Pathways', 'TGFBR3 Expression', 'Nucleotide Excision Repair', 'Translocation of SLC2A4 (GLUT4) to the Plasma Membrane', 'Circadian Clock', 'L1CAM Interactions', 'Hemostasis', 'ESR-mediated Signaling', 'Potassium Channels', 'TGF-beta Receptor Signaling Activates SMADs', 'Intrinsic Pathway for Apoptosis', 'G Alpha (Q) Signalling Events', 'Toll-like Receptor Cascades', 'Gluconeogenesis', 'Activation of Gene Expression by SREBF (SREBP)', 'Regulation of NFE2L2 Gene Expression'], 'anchor_sizes': [46, 19, 27, 133, 16, 14, 15, 37, 16, 16, 31, 19, 10, 22, 91, 35, 9, 12, 3, 6, 94, 5, 8, 17], 'anchor_weight': 30.0, 'n_with_anchor_signal': 9935}
+  seed: 42
+  weighting: graph edges 1, term anchors 30 (split over a node's terms)
+  nodes=9940 edges=41207
+  fallback: 5 nodes without term signal placed by their neighbours only; 310 near-coincident separated
+
+[2026-10-08T18:15:13+00:00] base=enrich_Reactome_Pathways_2024_a_termcols_1 status=OK elapsed=8.3s
+  method: Term columns: 24 Reactome_Pathways_2024_a themes, each an xy disc shared by all layers; node -> disc of the anchor holding its most significant term in its layer; z = layer
+  call: enrichment.enrich -> method_columns.pillar_coords
+  params: {'source': 'Reactome_Pathways_2024_a', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['Translation', 'Aerobic Respiration and Respiratory Electron Transport', 'SARS-CoV-2-host Interactions', 'The Role of GTSE1 in G2 M Progression After G2 Checkpoint', 'HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in the Presence of Ligand', 'Selective Autophagy', 'TP53 Regulates Metabolic Genes', 'RHO GTPase Effectors', 'Bacterial Infection Pathways', 'TGFBR3 Expression', 'Nucleotide Excision Repair', 'Translocation of SLC2A4 (GLUT4) to the Plasma Membrane', 'Circadian Clock', 'L1CAM Interactions', 'Hemostasis', 'ESR-mediated Signaling', 'Potassium Channels', 'TGF-beta Receptor Signaling Activates SMADs', 'Intrinsic Pathway for Apoptosis', 'G Alpha (Q) Signalling Events', 'Toll-like Receptor Cascades', 'Gluconeogenesis', 'Activation of Gene Expression by SREBF (SREBP)', 'Regulation of NFE2L2 Gene Expression'], 'group_sizes': {'Translation': 1166, 'other': 3106, 'ESR-mediated Signaling': 304, 'Toll-like Receptor Cascades': 453, 'Aerobic Respiration and Respiratory Electron Transport': 256, 'The Role of GTSE1 in G2 M Progression After G2 Checkpoint': 1246, 'Potassium Channels': 315, 'RHO GTPase Effectors': 243, 'Hemostasis': 535, 'HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in': 138, 'Activation of Gene Expression by SREBF (SREBP)': 325, 'Translocation of SLC2A4 (GLUT4) to the Plasma Membrane': 343, 'G Alpha (Q) Signalling Events': 200, 'TP53 Regulates Metabolic Genes': 422, 'SARS-CoV-2-host Interactions': 103, 'Regulation of NFE2L2 Gene Expression': 105, 'Gluconeogenesis': 194, 'Selective Autophagy': 73, 'TGFBR3 Expression': 150, 'Circadian Clock': 77, 'Intrinsic Pathway for Apoptosis': 5, 'Nucleotide Excision Repair': 42, 'L1CAM Interactions': 84, 'Bacterial Infection Pathways': 27, 'TGF-beta Receptor Signaling Activates SMADs': 28}}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: 3106 nodes with no representative term in the 'other' disc; 1152 near-coincident separated
+
+[2026-10-08T18:15:17+00:00] base=enrich_Reactome_Pathways_2024_a_funcstack_1 status=OK elapsed=3.8s
+  method: Function stack: one 2D Reactome_Pathways_2024_a function map for all layers (entities), z = layer
+  call: TF-IDF -> TruncatedSVD(32) -> mean per entity -> cuml.UMAP(n_components=2, metric='cosine') [GPU] -> layer_z_stack
+  params: {'source': 'Reactome_Pathways_2024_a', 'entities_mapped': 4201}
+  seed: 42
+  weighting: none (feature-space)
+  nodes=9940 edges=41207
+  fallback: 2 nodes without term signal on a ring around the map; 3565 near-coincident separated
+
+[2026-10-08T18:15:21+00:00] base=enrich_Reactome_Pathways_2024_a_blend25_1 status=OK elapsed=3.8s
+  method: Topology-function blend: UMAP 3D of [0.25 x node2vec (graph), 0.75 x Reactome_Pathways_2024_a term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'Reactome_Pathways_2024_a', 'alpha_graph': 0.25, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 3 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 1529 near-coincident separated
+
+[2026-10-08T18:15:25+00:00] base=enrich_Reactome_Pathways_2024_a_blend50_1 status=OK elapsed=3.8s
+  method: Topology-function blend: UMAP 3D of [0.5 x node2vec (graph), 0.5 x Reactome_Pathways_2024_a term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'Reactome_Pathways_2024_a', 'alpha_graph': 0.5, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 3 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 79 near-coincident separated
+
+[2026-10-08T18:15:30+00:00] base=enrich_Reactome_Pathways_2024_a_blend75_1 status=OK elapsed=5.5s
+  method: Topology-function blend: UMAP 3D of [0.75 x node2vec (graph), 0.25 x Reactome_Pathways_2024_a term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'Reactome_Pathways_2024_a', 'alpha_graph': 0.75, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 3 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 199 near-coincident separated
+
+[2026-10-08T18:15:34+00:00] base=enrich_Reactome_Pathways_2024_a_height_1 status=OK elapsed=3.5s
+  method: Enrichment height: free hemisphere tiles, nodes lifted by the rank of -log10 q of their best Reactome_Pathways_2024_a term in their own layer
+  call: enrichment.enrich -> layer_arrange.arrange(hemisphere, lift) [cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog)]
+  params: {'source': 'Reactome_Pathways_2024_a', 'lifted_nodes': 7204, 'lift_fraction': 0.6}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without tested terms stay on their tile; 764 near-coincident separated
+
+[2026-10-08T18:15:51+00:00] base=enrich_Reactome_Pathways_2024_a_snf_1 status=OK elapsed=17.7s
+  method: Similarity network fusion of 2 views (graph, Reactome_Pathways_2024_a), t-SNE 3D on the fused affinity
+  call: method_fusion._snf_fuse (PyTorch on cuda; K=20, mu=0.5, t=20) -> openTSNE PrecomputedAffinities (top 30)
+  params: {'source': 'Reactome_Pathways_2024_a', 'views': ['graph', 'Reactome_Pathways_2024_a'], 'K': 20, 'mu': 0.5, 'iterations': 20, 'signal': {'graph': 9940, 'Reactome_Pathways_2024_a': 9937}}
+  seed: 42
+  weighting: scaled exponential affinities per view, cross-diffused
+  nodes=9940 edges=41207
+  fallback: nodes without signal in a view use the graph view there; 3666 near-coincident separated
+
+[2026-10-08T18:15:56+00:00] base=enrich_Reactome_Pathways_2024_a_hyper_1 status=OK elapsed=4.5s
+  method: Hypergraph + graph spectral embedding: 1967 Reactome_Pathways_2024_a terms as hyperedges, beta 1, top 16 eigenvectors, UMAP 3D
+  call: scipy.sparse.linalg.eigsh(LinearOperator, k=17, which='LA') -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'Reactome_Pathways_2024_a', 'beta': 1.0, 'dim': 16, 'hyperedges': 1967, 'nodes_in_hyperedges': 7227, 'eigenvalues': [0.915, 0.7404, 0.6355, 0.612, 0.5983, 0.5651, 0.547, 0.5401, 0.5294, 0.5152, 0.5095, 0.5085, 0.5021, 0.501, 0.5008, 0.4998, 0.4976]}
+  seed: 42
+  weighting: normalised adjacency + normalised hypergraph operator (Zhou et al. 2006)
+  nodes=9940 edges=41207
+  fallback: 2713 nodes without terms placed by the graph part only; 192 near-coincident separated
+
+[2026-10-08T18:16:31+00:00] base=enrich_Reactome_Pathways_2024_a_umapand_1 status=OK elapsed=35.1s
+  method: UMAP model algebra: intersection (close in topology AND function) of the graph (node2vec) UMAP and the Reactome_Pathways_2024_a function UMAP
+  call: umap.UMAP(n_components=3).fit(graph) * umap.UMAP(...).fit(function)
+  params: {'source': 'Reactome_Pathways_2024_a', 'op': 'and', 'views': ['graph', 'Reactome_Pathways_2024_a']}
+  seed: 42
+  weighting: fuzzy simplicial set intersection / union
+  nodes=9940 edges=41207
+  fallback: nodes outside the node2vec giant component have a zero graph vector; 94 near-coincident separated
+
+[2026-10-08T18:16:38+00:00] base=enrich_all_magnets_1 status=OK elapsed=6.6s
+  method: Term magnets (magnets): 24 all themes as anchors on a sphere (QAP by similarity); nodes = harmonic mix of graph neighbours and their anchors; radii spread to fill the ball
+  call: enrichment.enrich -> scipy.optimize.quadratic_assignment (anchors) -> scipy.sparse.linalg.spsolve
+  params: {'source': 'all', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['GO_Biological_Process_2025_a:Translation (GO:0006412)', 'Reactome_Pathways_2024_a:Aerobic Respiration and Respiratory Electron Transport', 'Reactome_Pathways_2024_a:SARS-CoV-2-host Interactions', 'Reactome_Pathways_2024_a:The Role of GTSE1 in G2 M Progression After G2 Checkpoint', 'Reactome_Pathways_2024_a:HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in the Presence of Ligand', 'Reactome_Pathways_2024_a:TP53 Regulates Metabolic Genes', 'Reactome_Pathways_2024_a:Selective Autophagy', 'Reactome_Pathways_2024_a:RHO GTPase Effectors', 'GO_Biological_Process_2025_a:Regulation of DNA-templated Transcription (GO:0006355)', 'Reactome_Pathways_2024_a:Bacterial Infection Pathways', 'Reactome_Pathways_2024_a:Translocation of SLC2A4 (GLUT4) to the Plasma Membrane', 'GO_Biological_Process_2025_a:ATP Metabolic Process (GO:0046034)', 'Reactome_Pathways_2024_a:Nucleotide Excision Repair', 'GO_Biological_Process_2025_a:Protein Phosphorylation (GO:0006468)', 'Reactome_Pathways_2024_a:TGFBR3 Expression', 'Reactome_Pathways_2024_a:L1CAM Interactions', 'GO_Biological_Process_2025_a:Substantia Nigra Development (GO:0021762)', 'GO_Biological_Process_2025_a:Cellular Response to Superoxide (GO:0071451)', 'Reactome_Pathways_2024_a:TGF-beta Receptor Signaling Activates SMADs', 'Reactome_Pathways_2024_a:Regulation of PLK1 Activity at G2 M Transition', 'Reactome_Pathways_2024_a:Potassium Channels', 'Reactome_Pathways_2024_a:Intrinsic Pathway for Apoptosis', 'Reactome_Pathways_2024_a:Glycolysis', 'Reactome_Pathways_2024_a:Hemostasis'], 'anchor_sizes': [66, 37, 57, 151, 17, 24, 15, 37, 120, 22, 18, 8, 40, 17, 14, 28, 1, 13, 14, 12, 7, 5, 8, 96], 'anchor_weight': 30.0, 'n_with_anchor_signal': 9940}
+  seed: 42
+  weighting: graph edges 1, term anchors 30 (split over a node's terms)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal placed by their neighbours only; 333 near-coincident separated
+
+[2026-10-08T18:16:41+00:00] base=enrich_all_shells_1 status=OK elapsed=3.8s
+  method: Term magnets (shells): 24 all themes as anchors on a sphere (QAP by similarity); nodes = harmonic mix of graph neighbours and their anchors; each layer a concentric shell (copies on one radius)
+  call: enrichment.enrich -> scipy.optimize.quadratic_assignment (anchors) -> scipy.sparse.linalg.spsolve
+  params: {'source': 'all', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['GO_Biological_Process_2025_a:Translation (GO:0006412)', 'Reactome_Pathways_2024_a:Aerobic Respiration and Respiratory Electron Transport', 'Reactome_Pathways_2024_a:SARS-CoV-2-host Interactions', 'Reactome_Pathways_2024_a:The Role of GTSE1 in G2 M Progression After G2 Checkpoint', 'Reactome_Pathways_2024_a:HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in the Presence of Ligand', 'Reactome_Pathways_2024_a:TP53 Regulates Metabolic Genes', 'Reactome_Pathways_2024_a:Selective Autophagy', 'Reactome_Pathways_2024_a:RHO GTPase Effectors', 'GO_Biological_Process_2025_a:Regulation of DNA-templated Transcription (GO:0006355)', 'Reactome_Pathways_2024_a:Bacterial Infection Pathways', 'Reactome_Pathways_2024_a:Translocation of SLC2A4 (GLUT4) to the Plasma Membrane', 'GO_Biological_Process_2025_a:ATP Metabolic Process (GO:0046034)', 'Reactome_Pathways_2024_a:Nucleotide Excision Repair', 'GO_Biological_Process_2025_a:Protein Phosphorylation (GO:0006468)', 'Reactome_Pathways_2024_a:TGFBR3 Expression', 'Reactome_Pathways_2024_a:L1CAM Interactions', 'GO_Biological_Process_2025_a:Substantia Nigra Development (GO:0021762)', 'GO_Biological_Process_2025_a:Cellular Response to Superoxide (GO:0071451)', 'Reactome_Pathways_2024_a:TGF-beta Receptor Signaling Activates SMADs', 'Reactome_Pathways_2024_a:Regulation of PLK1 Activity at G2 M Transition', 'Reactome_Pathways_2024_a:Potassium Channels', 'Reactome_Pathways_2024_a:Intrinsic Pathway for Apoptosis', 'Reactome_Pathways_2024_a:Glycolysis', 'Reactome_Pathways_2024_a:Hemostasis'], 'anchor_sizes': [66, 37, 57, 151, 17, 24, 15, 37, 120, 22, 18, 8, 40, 17, 14, 28, 1, 13, 14, 12, 7, 5, 8, 96], 'anchor_weight': 30.0, 'n_with_anchor_signal': 9940}
+  seed: 42
+  weighting: graph edges 1, term anchors 30 (split over a node's terms)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal placed by their neighbours only; 179 near-coincident separated
+
+[2026-10-08T18:16:50+00:00] base=enrich_all_termcols_1 status=OK elapsed=8.7s
+  method: Term columns: 24 all themes, each an xy disc shared by all layers; node -> disc of the anchor holding its most significant term in its layer; z = layer
+  call: enrichment.enrich -> method_columns.pillar_coords
+  params: {'source': 'all', 'anchors': 'themes', 'group': 'layer', 'anchor_labels': ['GO_Biological_Process_2025_a:Translation (GO:0006412)', 'Reactome_Pathways_2024_a:Aerobic Respiration and Respiratory Electron Transport', 'Reactome_Pathways_2024_a:SARS-CoV-2-host Interactions', 'Reactome_Pathways_2024_a:The Role of GTSE1 in G2 M Progression After G2 Checkpoint', 'Reactome_Pathways_2024_a:HSP90 Chaperone Cycle for Steroid Hormone Receptors (SHR) in the Presence of Ligand', 'Reactome_Pathways_2024_a:TP53 Regulates Metabolic Genes', 'Reactome_Pathways_2024_a:Selective Autophagy', 'Reactome_Pathways_2024_a:RHO GTPase Effectors', 'GO_Biological_Process_2025_a:Regulation of DNA-templated Transcription (GO:0006355)', 'Reactome_Pathways_2024_a:Bacterial Infection Pathways', 'Reactome_Pathways_2024_a:Translocation of SLC2A4 (GLUT4) to the Plasma Membrane', 'GO_Biological_Process_2025_a:ATP Metabolic Process (GO:0046034)', 'Reactome_Pathways_2024_a:Nucleotide Excision Repair', 'GO_Biological_Process_2025_a:Protein Phosphorylation (GO:0006468)', 'Reactome_Pathways_2024_a:TGFBR3 Expression', 'Reactome_Pathways_2024_a:L1CAM Interactions', 'GO_Biological_Process_2025_a:Substantia Nigra Development (GO:0021762)', 'GO_Biological_Process_2025_a:Cellular Response to Superoxide (GO:0071451)', 'Reactome_Pathways_2024_a:TGF-beta Receptor Signaling Activates SMADs', 'Reactome_Pathways_2024_a:Regulation of PLK1 Activity at G2 M Transition', 'Reactome_Pathways_2024_a:Potassium Channels', 'Reactome_Pathways_2024_a:Intrinsic Pathway for Apoptosis', 'Reactome_Pathways_2024_a:Glycolysis', 'Reactome_Pathways_2024_a:Hemostasis'], 'group_sizes': {'GO_Biological_Process_2025_a:Translation (GO:0006412)': 1318, 'other': 2266, 'Reactome_Pathways_2024_a:L1CAM Interactions': 261, 'GO_Biological_Process_2025_a:Regulation of DNA-templated Tra': 1494, 'Reactome_Pathways_2024_a:The Role of GTSE1 in G2 M Progressi': 1206, 'Reactome_Pathways_2024_a:Aerobic Respiration and Respiratory': 276, 'Reactome_Pathways_2024_a:Potassium Channels': 327, 'Reactome_Pathways_2024_a:RHO GTPase Effectors': 211, 'Reactome_Pathways_2024_a:Hemostasis': 691, 'GO_Biological_Process_2025_a:Protein Phosphorylation (GO:000': 286, 'Reactome_Pathways_2024_a:HSP90 Chaperone Cycle for Steroid H': 118, 'GO_Biological_Process_2025_a:Cellular Response to Superoxide': 235, 'Reactome_Pathways_2024_a:Translocation of SLC2A4 (GLUT4) to ': 249, 'Reactome_Pathways_2024_a:TP53 Regulates Metabolic Genes': 232, 'Reactome_Pathways_2024_a:Regulation of PLK1 Activity at G2 M': 79, 'Reactome_Pathways_2024_a:SARS-CoV-2-host Interactions': 174, 'Reactome_Pathways_2024_a:TGFBR3 Expression': 140, 'Reactome_Pathways_2024_a:Nucleotide Excision Repair': 55, 'Reactome_Pathways_2024_a:Intrinsic Pathway for Apoptosis': 21, 'Reactome_Pathways_2024_a:Selective Autophagy': 63, 'Reactome_Pathways_2024_a:Glycolysis': 79, 'GO_Biological_Process_2025_a:ATP Metabolic Process (GO:00460': 52, 'Reactome_Pathways_2024_a:Bacterial Infection Pathways': 36, 'GO_Biological_Process_2025_a:Substantia Nigra Development (G': 24, 'Reactome_Pathways_2024_a:TGF-beta Receptor Signaling Activat': 47}}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: 2266 nodes with no representative term in the 'other' disc; 897 near-coincident separated
+
+[2026-10-08T18:16:55+00:00] base=enrich_all_funcstack_1 status=OK elapsed=4.5s
+  method: Function stack: one 2D all function map for all layers (entities), z = layer
+  call: TF-IDF -> TruncatedSVD(32) -> mean per entity -> cuml.UMAP(n_components=2, metric='cosine') [GPU] -> layer_z_stack
+  params: {'source': 'all', 'entities_mapped': 4203}
+  seed: 42
+  weighting: none (feature-space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal on a ring around the map; 213 near-coincident separated
+
+[2026-10-08T18:16:59+00:00] base=enrich_all_blend25_1 status=OK elapsed=4.9s
+  method: Topology-function blend: UMAP 3D of [0.25 x node2vec (graph), 0.75 x all term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'all', 'alpha_graph': 0.25, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 1212 near-coincident separated
+
+[2026-10-08T18:17:04+00:00] base=enrich_all_blend50_1 status=OK elapsed=4.3s
+  method: Topology-function blend: UMAP 3D of [0.5 x node2vec (graph), 0.5 x all term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'all', 'alpha_graph': 0.5, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 54 near-coincident separated
+
+[2026-10-08T18:17:11+00:00] base=enrich_all_blend75_1 status=OK elapsed=7.3s
+  method: Topology-function blend: UMAP 3D of [0.75 x node2vec (graph), 0.25 x all term SVD (function)], each L2-normalised
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] + TF-IDF SVD -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'all', 'alpha_graph': 0.75, 'svd_components': 32}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes without term signal use the graph part only; 0 outside the node2vec giant component use the function part only; 151 near-coincident separated
+
+[2026-10-08T18:17:14+00:00] base=enrich_all_height_1 status=OK elapsed=2.9s
+  method: Enrichment height: free hemisphere tiles, nodes lifted by the rank of -log10 q of their best all term in their own layer
+  call: enrichment.enrich -> layer_arrange.arrange(hemisphere, lift) [cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog)]
+  params: {'source': 'all', 'lifted_nodes': 9166, 'lift_fraction': 0.6}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without tested terms stay on their tile; 582 near-coincident separated
+
+[2026-10-08T18:17:36+00:00] base=enrich_all_snf_1 status=OK elapsed=22.1s
+  method: Similarity network fusion of 3 views (graph, GO_Biological_Process_2025_a, Reactome_Pathways_2024_a), t-SNE 3D on the fused affinity
+  call: method_fusion._snf_fuse (PyTorch on cuda; K=20, mu=0.5, t=20) -> openTSNE PrecomputedAffinities (top 30)
+  params: {'source': 'all', 'views': ['graph', 'GO_Biological_Process_2025_a', 'Reactome_Pathways_2024_a'], 'K': 20, 'mu': 0.5, 'iterations': 20, 'signal': {'graph': 9940, 'GO_Biological_Process_2025_a': 9940, 'Reactome_Pathways_2024_a': 9937}}
+  seed: 42
+  weighting: scaled exponential affinities per view, cross-diffused
+  nodes=9940 edges=41207
+  fallback: nodes without signal in a view use the graph view there; 3795 near-coincident separated
+
+[2026-10-08T18:17:40+00:00] base=enrich_all_hyper_1 status=OK elapsed=4.2s
+  method: Hypergraph + graph spectral embedding: 6807 all terms as hyperedges, beta 1, top 16 eigenvectors, UMAP 3D
+  call: scipy.sparse.linalg.eigsh(LinearOperator, k=17, which='LA') -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'source': 'all', 'beta': 1.0, 'dim': 16, 'hyperedges': 6807, 'nodes_in_hyperedges': 9226, 'eigenvalues': [0.9473, 0.7308, 0.6881, 0.6126, 0.5822, 0.5654, 0.5546, 0.5512, 0.5441, 0.5304, 0.5252, 0.5239, 0.5215, 0.5129, 0.5088, 0.5071, 0.5051]}
+  seed: 42
+  weighting: normalised adjacency + normalised hypergraph operator (Zhou et al. 2006)
+  nodes=9940 edges=41207
+  fallback: 714 nodes without terms placed by the graph part only; 150 near-coincident separated
+
+[2026-10-08T18:18:08+00:00] base=enrich_all_umapand_1 status=OK elapsed=27.8s
+  method: UMAP model algebra: intersection (close in topology AND function) of the graph (node2vec) UMAP and the all function UMAP
+  call: umap.UMAP(n_components=3).fit(graph) * umap.UMAP(...).fit(function)
+  params: {'source': 'all', 'op': 'and', 'views': ['graph', 'GO_Biological_Process_2025_a', 'Reactome_Pathways_2024_a']}
+  seed: 42
+  weighting: fuzzy simplicial set intersection / union
+  nodes=9940 edges=41207
+  fallback: nodes outside the node2vec giant component have a zero graph vector; 14 near-coincident separated
+
+[2026-10-08T18:18:22+00:00] base=graphdr_tsne_1 status=OK elapsed=13.7s
+  method: Graph-direct t-SNE: openTSNE 3D on walk graph affinities, exaggeration 1 (1 = t-SNE, ~4 UMAP-like, ~12 FA2-like), spectral init
+  call: openTSNE.TSNEEmbedding(init, PrecomputedAffinities(P_walk), negative_gradient_method='bh').optimize(250, exaggeration=12).optimize(750, exaggeration=1)
+  params: {'affinity': 'walk', 'exaggeration': 1.0, 'init': 'spectral', 'nnz': 819974}
+  seed: 42
+  weighting: walk affinities from the graph (no embedding step)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 1028 near-coincident separated
+
+[2026-10-08T18:18:34+00:00] base=graphdr_tsne_x4_1 status=OK elapsed=12.5s
+  method: Graph-direct t-SNE: openTSNE 3D on walk graph affinities, exaggeration 4 (1 = t-SNE, ~4 UMAP-like, ~12 FA2-like), spectral init
+  call: openTSNE.TSNEEmbedding(init, PrecomputedAffinities(P_walk), negative_gradient_method='bh').optimize(250, exaggeration=12).optimize(750, exaggeration=4)
+  params: {'affinity': 'walk', 'exaggeration': 4.0, 'init': 'spectral', 'nnz': 819974}
+  seed: 42
+  weighting: walk affinities from the graph (no embedding step)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 5246 near-coincident separated
+
+[2026-10-08T18:18:52+00:00] base=graphdr_tsne_hop3_1 status=OK elapsed=17.9s
+  method: Graph-direct t-SNE: openTSNE 3D on hop3 graph affinities, exaggeration 1 (1 = t-SNE, ~4 UMAP-like, ~12 FA2-like), spectral init
+  call: openTSNE.TSNEEmbedding(init, PrecomputedAffinities(P_hop3), negative_gradient_method='bh').optimize(250, exaggeration=12).optimize(750, exaggeration=1)
+  params: {'affinity': 'hop3', 'exaggeration': 1.0, 'init': 'spectral', 'nnz': 4359928}
+  seed: 42
+  weighting: hop3 affinities from the graph (no embedding step)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 494 near-coincident separated
+
+[2026-10-08T18:19:02+00:00] base=n2vred_trimap_bal_1 status=OK elapsed=10.0s
+  method: node2vec (p=1.0, q=1.0) embedding + trimap(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> trimap.TRIMAP(n_dims=3)
+  params: {'p': 1.0, 'q': 1.0, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'reducer': 'trimap'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 324 near-coincident separated
+
+[2026-10-08T18:19:06+00:00] base=n2vred_hnne_bal_1 status=OK elapsed=3.4s
+  method: node2vec (p=1.0, q=1.0) embedding + hnne(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> hnne.HNNE(n_components=3, metric='cosine')
+  params: {'p': 1.0, 'q': 1.0, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'reducer': 'hnne'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 923 near-coincident separated
+
+[2026-10-08T18:19:14+00:00] base=n2vred_localmap_bal_1 status=OK elapsed=8.7s
+  method: node2vec (p=1.0, q=1.0) embedding + localmap(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> pacmap.LocalMAP(n_components=3)
+  params: {'p': 1.0, 'q': 1.0, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'reducer': 'localmap'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 1370 near-coincident separated
+
+[2026-10-08T18:19:19+00:00] base=focus_shell_1 status=OK elapsed=4.7s
+  method: Focus layout (shell): shells by hop distance to the nearest focus node; directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._shell on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'shell', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'shells': {0: 1036, 1: 5913, 2: 2963, 3: 28}, 'unreachable_shell': 4}
+  seed: 42
+  weighting: unweighted hops
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 417 near-coincident separated
+
+[2026-10-08T18:19:23+00:00] base=focus_geo_1 status=OK elapsed=3.6s
+  method: Focus layout (geo): radius = 1 - score rank (high scores in the core); directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._geo on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'geo', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'score_column': 'rwr_in_layer_n', 'nodes_scored': 9940}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 134 near-coincident separated
+
+[2026-10-08T18:19:27+00:00] base=focus_geobands_1 status=OK elapsed=4.1s
+  method: Focus layout (geobands): one latitude band per layer, depth = 1 - score rank within the layer; directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._geobands on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'geobands', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'bands': 22, 'band_width_deg': 4.73}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 0 near-coincident separated
+
+[2026-10-08T18:19:31+00:00] base=focus_fisheye_1 status=OK elapsed=3.9s
+  method: Focus layout (fisheye): Sarkar-Brown fisheye magnification around the focus; directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._fisheye on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'fisheye', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'distortion': 4.0}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 918 near-coincident separated
+
+[2026-10-08T18:19:33+00:00] base=focus_hyp_1 status=OK elapsed=2.5s
+  method: Focus layout (hyp): Poincare ball recentred on the focus (Moebius translation); directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._hyp on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'hyp', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'ball_scale_p90': 83.44876549686713, 'focus_centroid_norm': 0.05003551235693185}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 647 near-coincident separated
+
+[2026-10-08T18:19:37+00:00] base=focus_core_1 status=OK elapsed=3.5s
+  method: Focus layout (core): focus module at full scale in the centre, the rest on an outer shell; directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._core on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'core', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'module_nodes': 6949, 'outer_nodes': 2991}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 932 near-coincident separated
+
+[2026-10-08T18:19:40+00:00] base=focus_tree_1 status=OK elapsed=3.7s
+  method: Focus layout (tree): shortest-path forest from the focus, directions pulled toward the parent; directions from graphdr_tsne_1 (from nodes.tsv)
+  call: method_focus._tree on base graphdr_tsne_1 (from nodes.tsv)
+  params: {'kind': 'tree', 'base': 'tsne', 'focus_column': 'is_seed_c', 'focus_nodes': 1036, 'max_depth': 3, 'unreachable': 0}
+  seed: 42
+  weighting: unweighted hops
+  nodes=9940 edges=41207
+  fallback: nodes without a path to the focus set on the outermost shell; 2231 near-coincident separated
+
+[2026-10-08T18:20:04+00:00] base=engine_tfdp_free_1 status=OK elapsed=24.0s
+  method: Native-3D GPU engine: tfdp main term, constraint free, copy springs 0; PivotMDS init, Adam 2000 iterations on cuda
+  call: method_engine._engine (PyTorch)
+  params: {'main': 'tfdp', 'constraint': 'free', 'copies': 0.0, 'iters': 2000, 'device': 'cuda', 'alpha': 0.1, 'beta': 8.0, 'ramp_start': 0.3, 'lr': 0.05}
+  seed: 42
+  weighting: t-FDP energy (all-pairs repulsion, edge attraction)
+  nodes=9940 edges=41207
+  fallback: whole graph laid out; 9 near-coincident separated
+
+[2026-10-08T18:20:28+00:00] base=engine_tfdp_shells_1 status=OK elapsed=23.7s
+  method: Native-3D GPU engine: tfdp main term, constraint shells, copy springs 0; PivotMDS init, Adam 2000 iterations on cuda
+  call: method_engine._engine (PyTorch)
+  params: {'main': 'tfdp', 'constraint': 'shells', 'copies': 0.0, 'iters': 2000, 'device': 'cuda', 'alpha': 0.1, 'beta': 8.0, 'ramp_start': 0.3, 'lr': 0.05}
+  seed: 42
+  weighting: t-FDP energy (all-pairs repulsion, edge attraction), shells constraint
+  nodes=9940 edges=41207
+  fallback: whole graph laid out; 15 near-coincident separated
+
+[2026-10-08T18:20:46+00:00] base=engine_stress_free_1 status=OK elapsed=18.2s
+  method: Native-3D GPU engine: stress main term, constraint free, copy springs 0; PivotMDS init, Adam 2000 iterations on cuda
+  call: method_engine._engine (PyTorch)
+  params: {'main': 'stress', 'constraint': 'free', 'copies': 0.0, 'iters': 2000, 'device': 'cuda', 'alpha': 0.1, 'beta': 8.0, 'ramp_start': 0.3, 'lr': 0.05}
+  seed: 42
+  weighting: stress, w = D^-2, sampled pairs
+  nodes=9940 edges=41207
+  fallback: whole graph laid out; 0 near-coincident separated
+
+[2026-10-08T18:21:08+00:00] base=engine_tfdp_sphere_1 status=OK elapsed=22.3s
+  method: Native-3D GPU engine: tfdp main term, constraint sphere, copy springs 0; PivotMDS init, Adam 2000 iterations on cuda
+  call: method_engine._engine (PyTorch)
+  params: {'main': 'tfdp', 'constraint': 'sphere', 'copies': 0.0, 'iters': 2000, 'device': 'cuda', 'alpha': 0.1, 'beta': 8.0, 'ramp_start': 0.3, 'lr': 0.05}
+  seed: 42
+  weighting: t-FDP energy (all-pairs repulsion, edge attraction), sphere constraint
+  nodes=9940 edges=41207
+  fallback: whole graph laid out; 591 near-coincident separated
+
+[2026-10-08T18:22:41+00:00] base=joint_suprarwr_1 status=OK elapsed=92.4s
+  method: Joint multilayer embedding (suprarwr), reducer umap
+  call: supra-graph RWR (restart 0.5, omega 1) -> sqrt -> TruncatedSVD(32) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'method': 'suprarwr', 'reducer': 'umap', 'omega': 1.0, 'dim': 16}
+  seed: 42
+  weighting: supra-graph: intra 1, cross-layer 1, copy coupling 1
+  nodes=9940 edges=41207
+  fallback: every copy embedded; 251 near-coincident separated
+
+[2026-10-08T18:22:56+00:00] base=joint_suprarwr_w10_1 status=OK elapsed=14.8s
+  method: Joint multilayer embedding (suprarwr), reducer umap
+  call: supra-graph RWR (restart 0.5, omega 10) -> sqrt -> TruncatedSVD(32) -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='euclidean', random_state=42) [GPU]
+  params: {'method': 'suprarwr', 'reducer': 'umap', 'omega': 10.0, 'dim': 16}
+  seed: 42
+  weighting: supra-graph: intra 1, cross-layer 1, copy coupling 10
+  nodes=9940 edges=41207
+  fallback: every copy embedded; 73 near-coincident separated
+
+[2026-10-08T18:23:23+00:00] base=alignedumap_r001_1 status=OK elapsed=27.7s
+  method: AlignedUMAP stack: one 2D UMAP per layer of its node2vec vectors, consecutive layers tied by shared entities (alignment_regularisation 0.001), z = layer
+  call: umap.AlignedUMAP(n_components=2, metric='cosine', alignment_regularisation=0.001).fit(slices, relations)
+  params: {'alignment_regularisation': 0.001, 'slices': 22, 'shared_per_pair_median': 162}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the node2vec giant component on a ring; 152 near-coincident separated
+
+[2026-10-08T18:23:44+00:00] base=alignedumap_r1_1 status=OK elapsed=21.2s
+  method: AlignedUMAP stack: one 2D UMAP per layer of its node2vec vectors, consecutive layers tied by shared entities (alignment_regularisation 0.1), z = layer
+  call: umap.AlignedUMAP(n_components=2, metric='cosine', alignment_regularisation=0.1).fit(slices, relations)
+  params: {'alignment_regularisation': 0.1, 'slices': 22, 'shared_per_pair_median': 162}
+  seed: 42
+  weighting: none (embedding space)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the node2vec giant component on a ring; 91 near-coincident separated
+
+[2026-10-08T18:23:49+00:00] base=geom_terrain_1 status=OK elapsed=4.5s
+  method: Density terrain: global LinLog FA2 ground plane, z = smoothed point density (modules = hills)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]; histogram2d + gaussian_filter
+  params: {'bins': 256, 'sigma': 0.04, 'height': 0.5}
+  seed: 42
+  weighting: unweighted LinLog
+  nodes=9940 edges=41207
+  fallback: isolated nodes on a ring (pattern A)
+
+[2026-10-08T18:23:53+00:00] base=geom_terraintiles_1 status=OK elapsed=3.6s
+  method: Per-layer density terrain: 22 LinLog tiles on a 5x5 grid, each with its own relief
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); histogram2d + gaussian_filter per tile
+  params: {'grid': 5, 'sigma': 0.04, 'height': 1.2}
+  seed: 42
+  weighting: unweighted LinLog per layer
+  nodes=9940 edges=41207
+  fallback: degree-0 nodes of a layer on a ring around its tile; 412 near-coincident separated
+
+[2026-10-08T18:24:05+00:00] base=geom_hilbertlayer_1 status=OK elapsed=12.8s
+  method: 3D Hilbert curve (32^3 cells) through the layer / recursive Leiden hierarchy (450 leaves, depth 3); communities are compact blocks
+  call: leidenalg (RBConfiguration) + layer_arrange.seriate + Skilling Hilbert transform
+  params: {'top': 'layer', 'bits': 5, 'leaf_size': 64, 'depth_max': 3, 'resolution': 1.0}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: communities < 3 nodes (incl. isolated) grouped as one rest block
+
+[2026-10-08T18:24:09+00:00] base=geom_dome_1 status=OK elapsed=4.1s
+  method: Dome / planetarium: one hemisphere, angular position = global LinLog layout (azimuthal equidistant inverse)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]; hemisphere map
+  params: {'nested': False, 'dome_gap': 0.0, 'rim_quantile': 0.98}
+  seed: 42
+  weighting: unweighted LinLog
+  nodes=9940 edges=41207
+  fallback: outermost 2% clamped to the dome rim; 6275 near-coincident separated
+
+[2026-10-08T18:24:12+00:00] base=geom_domes_1 status=OK elapsed=2.9s
+  method: Nested domes: one hemisphere per layer (radius 1 + 0.08 x layer position), angular position = global LinLog layout (azimuthal equidistant inverse)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]; hemisphere map
+  params: {'nested': True, 'dome_gap': 0.08, 'rim_quantile': 0.98}
+  seed: 42
+  weighting: unweighted LinLog
+  nodes=9940 edges=41207
+  fallback: outermost 2% clamped to the dome rim; 6246 near-coincident separated
+
+[2026-10-08T18:24:20+00:00] base=geom_nested_1 status=OK elapsed=7.2s
+  method: Nested spheres of the recursive Leiden hierarchy (491 leaf balls, depth 3); 3D spring layouts in the leaves
+  call: leidenalg + nx.spring_layout(dim=3) per level + ball packing
+  params: {'top': 'community', 'leaf_size': 64, 'depth_max': 3, 'resolution': 1.0}
+  seed: 42
+  weighting: community graph weights = edge counts between communities
+  nodes=9940 edges=41207
+  fallback: communities < 3 nodes grouped as one rest ball; 1457 near-coincident separated
+
+[2026-10-08T18:24:25+00:00] base=geom_nestedlayer_1 status=OK elapsed=5.5s
+  method: Nested spheres of the layer / recursive Leiden hierarchy (450 leaf balls, depth 3); 3D spring layouts in the leaves
+  call: leidenalg + nx.spring_layout(dim=3) per level + ball packing
+  params: {'top': 'layer', 'leaf_size': 64, 'depth_max': 3, 'resolution': 1.0}
+  seed: 42
+  weighting: community graph weights = edge counts between communities
+  nodes=9940 edges=41207
+  fallback: communities < 3 nodes grouped as one rest ball; 1371 near-coincident separated
+
+[2026-10-08T18:24:32+00:00] base=geom_mapper_1 status=OK elapsed=7.2s
+  method: Mapper skeleton: lens = global LinLog, 14^2 cover (overlap 0.3), clusters = graph components per cell (574 clusters, 746 nerve edges), nerve by 3D spring layout; nodes at the mean of their clusters
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]; csgraph.connected_components per cell; nx.spring_layout(nerve, dim=3)
+  params: {'cubes': 14, 'overlap': 0.3, 'clusters': 574}
+  seed: 42
+  weighting: nerve edge weight = shared nodes
+  nodes=9940 edges=41207
+  fallback: isolated nodes are single-node clusters; 9591 near-coincident separated
+
+[2026-10-08T18:24:37+00:00] base=sumap_layer_1 status=OK elapsed=4.7s
+  method: Supervised UMAP of node2vec vectors, target = layer, target_weight 0.5
+  call: cuml.UMAP(n_components=3, target_weight=w).fit_transform(X, y) [GPU]
+  params: {'label': 'layer', 'target_weight': 0.5, 'classes': 22, 'unlabelled': 0}
+  seed: 42
+  weighting: node2vec embedding + categorical target
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 432 near-coincident separated
+
+[2026-10-08T18:24:42+00:00] base=sumap_community_1 status=OK elapsed=4.9s
+  method: Supervised UMAP of node2vec vectors, target = Leiden community, target_weight 0.5
+  call: cuml.UMAP(n_components=3, target_weight=w).fit_transform(X, y) [GPU]
+  params: {'label': 'community', 'target_weight': 0.5, 'classes': 23, 'unlabelled': 0}
+  seed: 42
+  weighting: node2vec embedding + categorical target
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 527 near-coincident separated
+
+[2026-10-08T18:24:50+00:00] base=sumap_theme_1 status=OK elapsed=8.6s
+  method: Supervised UMAP of node2vec vectors, target = best all theme in the node's layer (24 themes; none = unlabelled), target_weight 0.5
+  call: umap.UMAP(n_components=3, target_weight=w).fit_transform(X, y)
+  params: {'label': 'theme', 'target_weight': 0.5, 'classes': 24, 'unlabelled': 2266}
+  seed: 42
+  weighting: node2vec embedding + categorical target
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component on the fallback shell; 331 near-coincident separated
+
+[2026-10-08T18:24:54+00:00] base=spokes_degree_1 status=OK elapsed=3.8s
+  method: Spokes: one axis per layer (22, QAP-assigned on a sphere), distance from the centre = within-layer rank of degree (top outside), cross-section = the layer's LinLog tile in a 14 deg cone
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); degree; scipy quadratic_assignment (axes)
+  params: {'metric': 'degree', 'width': 'cone', 'hubs': 'out', 'half_angle_deg': 14.0, 'inner': 0.12}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on the tile ring (outer part of the cone); 656 near-coincident separated
+
+[2026-10-08T18:24:58+00:00] base=spokes_degree_needle_1 status=OK elapsed=4.1s
+  method: Spokes: one axis per layer (22, QAP-assigned on a sphere), distance from the centre = within-layer rank of degree (top outside), cross-section = the layer's LinLog tile in a 4 deg cone
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); degree; scipy quadratic_assignment (axes)
+  params: {'metric': 'degree', 'width': 'needle', 'hubs': 'out', 'half_angle_deg': 4.0, 'inner': 0.12}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on the tile ring (outer part of the cone); 1942 near-coincident separated
+
+[2026-10-08T18:25:02+00:00] base=spokes_score_1 status=OK elapsed=3.8s
+  method: Spokes: one axis per layer (22, QAP-assigned on a sphere), distance from the centre = within-layer rank of score (top outside), cross-section = the layer's LinLog tile in a 14 deg cone
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer tile (engine linlog); --score-column (missing = lowest); scipy quadratic_assignment (axes)
+  params: {'metric': 'score', 'width': 'cone', 'hubs': 'out', 'half_angle_deg': 14.0, 'inner': 0.12}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: per-layer isolated nodes on the tile ring (outer part of the cone); 113 near-coincident separated
+
+[2026-10-08T18:25:07+00:00] base=fa2_1 status=OK elapsed=4.8s
+  method: ForceAtlas2 (shared xy, discrete z per layer)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'max_iter': 100, 'seed': 42, 'dim': 2}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: 0 isolated nodes ring-placed per layer at z={'Ab-LTMR.CCKAR': -2857.443359375, 'Ab-LTMR.LGI2': -2585.3058965773807, 'Ab-LTMR.NSG2': -2313.168433779762, 'Ab-LTMR.ETV1': -2041.0309709821427, 'A-Propr.HAPLN4': -1768.8935081845239, 'A-PEP.NTRK3_S100A16': -1496.7560453869046, 'A-PEP.SCGN_ADRA2C': -1224.6185825892858, 'A-PEP.CHRNA7_SLC18A3': -952.4811197916666, 'ATF3': -680.3436569940476, 'A-Propr.PCDH8': -408.20619419642856, 'A-Propr.EPHA3': -136.06873139880952, 'C-PEP.TAC1_CHRNA3': 136.06873139880952, 'C-PEP.TAC1_CACNG5': 408.20619419642856, 'C-LTMR.CDH9': 680.3436569940476, 'C-Thermo.TRPM8': 952.4811197916666, 'C-PEP.ADORA2B': 1224.6185825892858, 'A-PEP.KIT': 1496.7560453869046, 'A-LTMR.TAC3': 1768.8935081845239, 'C-Thermo.RXFP1': 2041.0309709821427, 'C-NP.SST': 2313.168433779762, 'C-NP.MRGPRX1_MRGPRX4': 2585.3058965773807, 'C-NP.MRGPRX1_GFRA2': 2857.443359375}
+
+[2026-10-08T18:25:12+00:00] base=fa2_2 status=OK elapsed=4.7s
+  method: ForceAtlas2 (linlog + dissuade_hubs, shared xy, discrete z per layer)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=True, outbound_attraction_distribution=True, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]
+  params: {'max_iter': 100, 'seed': 42, 'dim': 2, 'linlog': True, 'dissuade_hubs': True}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: 0 isolated nodes ring-placed per layer at z={'Ab-LTMR.CCKAR': -72665.701171875, 'Ab-LTMR.LGI2': -65745.158203125, 'Ab-LTMR.NSG2': -58824.615234375, 'Ab-LTMR.ETV1': -51904.072265625, 'A-Propr.HAPLN4': -44983.529296875, 'A-PEP.NTRK3_S100A16': -38062.986328125, 'A-PEP.SCGN_ADRA2C': -31142.443359375, 'A-PEP.CHRNA7_SLC18A3': -24221.900390625, 'ATF3': -17301.357421875, 'A-Propr.PCDH8': -10380.814453125, 'A-Propr.EPHA3': -3460.271484375, 'C-PEP.TAC1_CHRNA3': 3460.271484375, 'C-PEP.TAC1_CACNG5': 10380.814453125, 'C-LTMR.CDH9': 17301.357421875, 'C-Thermo.TRPM8': 24221.900390625, 'C-PEP.ADORA2B': 31142.443359375, 'A-PEP.KIT': 38062.986328125, 'A-LTMR.TAC3': 44983.529296875, 'C-Thermo.RXFP1': 51904.072265625, 'C-NP.SST': 58824.615234375, 'C-NP.MRGPRX1_MRGPRX4': 65745.158203125, 'C-NP.MRGPRX1_GFRA2': 72665.701171875}
+
+[2026-10-08T18:25:16+00:00] base=fa2_3 status=OK elapsed=4.0s
+  method: ForceAtlas2 (cross-layer down-weighted, shared xy, discrete z per layer)
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42, weight='fa_weight') [GPU, not bit-reproducible run to run]
+  params: {'max_iter': 100, 'seed': 42, 'dim': 2, 'weight': 'fa_weight'}
+  seed: 42
+  weighting: attraction: within=1.0, cross=0.2
+  nodes=9940 edges=41207
+  fallback: 0 isolated nodes ring-placed per layer at z={'Ab-LTMR.CCKAR': -3930.532348632812, 'Ab-LTMR.LGI2': -3556.1959344773063, 'Ab-LTMR.NSG2': -3181.8595203218, 'Ab-LTMR.ETV1': -2807.5231061662944, 'A-Propr.HAPLN4': -2433.186692010788, 'A-PEP.NTRK3_S100A16': -2058.8502778552825, 'A-PEP.SCGN_ADRA2C': -1684.5138636997765, 'A-PEP.CHRNA7_SLC18A3': -1310.1774495442708, 'ATF3': -935.8410353887648, 'A-Propr.PCDH8': -561.5046212332588, 'A-Propr.EPHA3': -187.16820707775295, 'C-PEP.TAC1_CHRNA3': 187.16820707775295, 'C-PEP.TAC1_CACNG5': 561.5046212332588, 'C-LTMR.CDH9': 935.8410353887648, 'C-Thermo.TRPM8': 1310.1774495442708, 'C-PEP.ADORA2B': 1684.5138636997765, 'A-PEP.KIT': 2058.8502778552825, 'A-LTMR.TAC3': 2433.186692010788, 'C-Thermo.RXFP1': 2807.5231061662944, 'C-NP.SST': 3181.8595203218, 'C-NP.MRGPRX1_MRGPRX4': 3556.1959344773063, 'C-NP.MRGPRX1_GFRA2': 3930.532348632812}
+
+[2026-10-08T18:25:33+00:00] base=fa2sep_1 status=OK elapsed=17.6s
+  method: ForceAtlas2 run independently per layer (induced subgraphs), xy left overlapping across layers, z-stacked
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run] per layer subgraph, x22
+  params: {'max_iter': 100, 'seed': 42, 'dim': 2, 'layers': ('Ab-LTMR.CCKAR', 'Ab-LTMR.LGI2', 'Ab-LTMR.NSG2', 'Ab-LTMR.ETV1', 'A-Propr.HAPLN4', 'A-PEP.NTRK3_S100A16', 'A-PEP.SCGN_ADRA2C', 'A-PEP.CHRNA7_SLC18A3', 'ATF3', 'A-Propr.PCDH8', 'A-Propr.EPHA3', 'C-PEP.TAC1_CHRNA3', 'C-PEP.TAC1_CACNG5', 'C-LTMR.CDH9', 'C-Thermo.TRPM8', 'C-PEP.ADORA2B', 'A-PEP.KIT', 'A-LTMR.TAC3', 'C-Thermo.RXFP1', 'C-NP.SST', 'C-NP.MRGPRX1_MRGPRX4', 'C-NP.MRGPRX1_GFRA2')}
+  seed: 42
+  weighting: none (cross-layer edges excluded by induced subgraph)
+  nodes=9940 edges=41207
+  fallback: 0 within-layer-isolated nodes ring-placed per their own layer at z={'Ab-LTMR.CCKAR': -423.9126739501953, 'Ab-LTMR.LGI2': -383.540038335891, 'Ab-LTMR.NSG2': -343.16740272158665, 'Ab-LTMR.ETV1': -302.7947671072824, 'A-Propr.HAPLN4': -262.42213149297805, 'A-PEP.NTRK3_S100A16': -222.04949587867372, 'A-PEP.SCGN_ADRA2C': -181.67686026436942, 'A-PEP.CHRNA7_SLC18A3': -141.3042246500651, 'ATF3': -100.9315890357608, 'A-Propr.PCDH8': -60.55895342145647, 'A-Propr.EPHA3': -20.186317807152157, 'C-PEP.TAC1_CHRNA3': 20.186317807152157, 'C-PEP.TAC1_CACNG5': 60.55895342145647, 'C-LTMR.CDH9': 100.9315890357608, 'C-Thermo.TRPM8': 141.3042246500651, 'C-PEP.ADORA2B': 181.67686026436942, 'A-PEP.KIT': 222.04949587867372, 'A-LTMR.TAC3': 262.42213149297805, 'C-Thermo.RXFP1': 302.7947671072824, 'C-NP.SST': 343.16740272158665, 'C-NP.MRGPRX1_MRGPRX4': 383.540038335891, 'C-NP.MRGPRX1_GFRA2': 423.9126739501953}
+
+[2026-10-08T18:25:44+00:00] base=topobet_1 status=OK elapsed=11.3s
+  method: Centrality-elevation hybrid: fa2_1 xy + z from betweenness_centrality
+  call: cugraph.betweenness_centrality(G, normalized=True) [GPU, exact]
+  params: {'reused_fa2_1_xy': True}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: z = normalized betweenness_centrality, scaled to xy spread (5714.8867)
+
+[2026-10-08T18:25:49+00:00] base=n2vbal_1 status=OK elapsed=4.6s
+  method: node2vec (p=1, q=1) embedding + UMAP(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'p': 1, 'q': 1, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'umap_n_neighbors': 15, 'umap_min_dist': 0.5, 'umap_spread': 2.0, 'umap_metric': 'cosine'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component (random walks can't leave a disconnected component) placed via Fibonacci-sphere shell, radius_factor=1.35
+
+[2026-10-08T18:26:02+00:00] base=n2vbfs_1 status=OK elapsed=12.8s
+  method: node2vec (p=0.25, q=4) embedding + UMAP(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=0.25, q=4, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'p': 0.25, 'q': 4, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'umap_n_neighbors': 15, 'umap_min_dist': 0.5, 'umap_spread': 2.0, 'umap_metric': 'cosine'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component (random walks can't leave a disconnected component) placed via Fibonacci-sphere shell, radius_factor=1.35
+
+[2026-10-08T18:26:08+00:00] base=fa2spectral_1 status=OK elapsed=6.0s
+  method: ForceAtlas2 seeded with a spectral embedding (fCoSE-style warm start), z-stacked
+  call: cugraph.force_atlas2(G, pos_list=seed, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42) [GPU, not bit-reproducible run to run]; seed = prepare_seed_positions(spectral_positions(G, 2))
+  params: {'max_iter': 100, 'seed': 42, 'dim': 2, 'seeded': True, 'seed_rms_per_sqrt_n': 1.0, 'seed_jitter_fraction': 0.01}
+  seed: 42
+  weighting: unweighted
+  nodes=9940 edges=41207
+  fallback: 0 isolated nodes ring-placed per layer at z={'Ab-LTMR.CCKAR': -3103.679077148437, 'Ab-LTMR.LGI2': -2808.0905936104905, 'Ab-LTMR.NSG2': -2512.5021100725444, 'Ab-LTMR.ETV1': -2216.913626534598, 'A-Propr.HAPLN4': -1921.3251429966515, 'A-PEP.NTRK3_S100A16': -1625.7366594587052, 'A-PEP.SCGN_ADRA2C': -1330.1481759207588, 'A-PEP.CHRNA7_SLC18A3': -1034.5596923828123, 'ATF3': -738.9712088448659, 'A-Propr.PCDH8': -443.3827253069196, 'A-Propr.EPHA3': -147.7942417689732, 'C-PEP.TAC1_CHRNA3': 147.7942417689732, 'C-PEP.TAC1_CACNG5': 443.3827253069196, 'C-LTMR.CDH9': 738.9712088448659, 'C-Thermo.TRPM8': 1034.5596923828123, 'C-PEP.ADORA2B': 1330.1481759207588, 'A-PEP.KIT': 1625.7366594587052, 'A-LTMR.TAC3': 1921.3251429966515, 'C-Thermo.RXFP1': 2216.913626534598, 'C-NP.SST': 2512.5021100725444, 'C-NP.MRGPRX1_MRGPRX4': 2808.0905936104905, 'C-NP.MRGPRX1_GFRA2': 3103.679077148437}
+
+[2026-10-08T18:26:17+00:00] base=community_1 status=OK elapsed=8.8s
+  method: Louvain community detection, meta-layout (ForceAtlas2 3D on the community graph), local sublayout per community
+  call: community.best_partition(G) -> nx.forceatlas2_layout(meta_graph, dim=3, weight='weight')
+  params: {'seed': 42, 'n_communities': 22}
+  seed: 42
+  weighting: meta-graph edges weighted by inter-community edge count
+  nodes=9940 edges=41207
+  fallback: 0 singleton communities (isolated nodes) placed exactly at their meta-node slot; 22 communities' sub-layouts capped at 0.45 x the gap to the nearest community (x sqrt(size/largest))
+
+[2026-10-08T18:26:23+00:00] base=n2vbal_pacmap_1 status=OK elapsed=6.5s
+  method: node2vec (p=1, q=1) embedding + PaCMAP(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> pacmap.PaCMAP(n_components=3, n_neighbors=10, distance='angular', random_state=42)
+  params: {'p': 1, 'q': 1, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'pacmap_n_neighbors': 10, 'pacmap_MN_ratio': 0.5, 'pacmap_FP_ratio': 2.0, 'pacmap_distance': 'angular'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component (random walks can't leave a disconnected component) placed via Fibonacci-sphere shell, radius_factor=1.35
+
+[2026-10-08T18:26:38+00:00] base=n2vdfs_pacmap_1 status=OK elapsed=15.1s
+  method: node2vec (p=4, q=0.25) embedding + PaCMAP(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=4, q=0.25, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> pacmap.PaCMAP(n_components=3, n_neighbors=10, distance='angular', random_state=42)
+  params: {'p': 4, 'q': 0.25, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'pacmap_n_neighbors': 10, 'pacmap_MN_ratio': 0.5, 'pacmap_FP_ratio': 2.0, 'pacmap_distance': 'angular'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component (random walks can't leave a disconnected component) placed via Fibonacci-sphere shell, radius_factor=1.35
+
+[2026-10-08T18:26:54+00:00] base=rwr_1 status=OK elapsed=15.3s
+  method: Random-walk-with-restart feature landscape: personalized-PageRank visitation distribution per node embedded via UMAP -- a diffusion-based feature space rather than raw topology or a fixed annotation vector
+  call: batched sparse power series (personalized PageRank, alpha=0.1) for all sources -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'restart_prob': 0.9, 'n_neighbors': 15, 'min_dist': 0.5, 'spread': 2.0}
+  seed: 42
+  weighting: none (feature-space embedding)
+  nodes=9940 edges=41207
+  fallback: none needed -- personalized PageRank is well-defined for isolated/dangling nodes
+
+[2026-10-08T18:27:10+00:00] base=metapath_1 status=OK elapsed=16.4s
+  method: Metapath-biased random walks (same-layer domain-continuity bias) + Word2Vec + UMAP(3D)
+  call: custom weighted walk generator (10 walks/node) -> gensim.models.Word2Vec(sg=1, workers=16) [workers>1: not bit-reproducible] -> cuml.UMAP(n_components=3, n_neighbors=15, min_dist=0.5, spread=2.0, metric='cosine', random_state=42) [GPU]
+  params: {'same_domain_boost': 4.0, 'walk_length': 20, 'num_walks': 10, 'workers': 16, 'dimensions': 64, 'seed': 42}
+  seed: 42
+  weighting: walk transitions weighted 4.0x toward same-layer (same-domain) edges
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component (walks can't leave a disconnected component) placed via Fibonacci-sphere shell, radius_factor=1.35
+
+[2026-10-08T18:27:16+00:00] base=domaintouch_1 status=OK elapsed=5.7s
+  method: Centrality-elevation hybrid: fa2_1 xy + z from domain_touch_count
+  call: custom: |{layer of node} union {layers of its neighbors}|
+  params: {'reused_fa2_1_xy': True}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: z = normalized domain_touch_count, scaled to xy spread (5714.8867)
+
+[2026-10-08T18:27:20+00:00] base=fa2rarity_1 status=OK elapsed=3.8s
+  method: ForceAtlas2 with per-layer_c endpoint pair rarity weighting (-ln(count/total), not the binary within/cross-layer split), z-stacked
+  call: cugraph.force_atlas2(G, max_iter=1000, lin_log_mode=False, outbound_attraction_distribution=False, barnes_hut_optimize=True, random_state=42, weight='rarity_weight') [GPU, not bit-reproducible run to run]
+  params: {'max_iter': 100, 'seed': 42, 'dim': 2, 'rarity_weights': {'A-PEP.CHRNA7_SLC18A3--A-PEP.CHRNA7_SLC18A3': 3.029, 'A-PEP.CHRNA7_SLC18A3--Ab-LTMR.ETV1': 9.528, 'A-PEP.CHRNA7_SLC18A3--Ab-LTMR.NSG2': 9.017, 'Ab-LTMR.CCKAR--Ab-LTMR.CCKAR': 3.41, 'C-LTMR.CDH9--C-LTMR.CDH9': 3.92, 'Ab-LTMR.LGI2--Ab-LTMR.LGI2': 3.362, 'A-Propr.HAPLN4--A-Propr.HAPLN4': 3.398, 'A-PEP.KIT--A-PEP.KIT': 2.986, 'C-PEP.TAC1_CACNG5--C-PEP.TAC1_CACNG5': 3.045, 'Ab-LTMR.NSG2--Ab-LTMR.NSG2': 3.291, 'Ab-LTMR.ETV1--Ab-LTMR.ETV1': 3.132, 'A-Propr.PCDH8--A-Propr.PCDH8': 3.475, 'A-Propr.EPHA3--A-Propr.EPHA3': 3.372, 'A-Propr.HAPLN4--Ab-LTMR.NSG2': 8.061, 'ATF3--Ab-LTMR.NSG2': 7.854, 'Ab-LTMR.NSG2--C-LTMR.CDH9': 7.535, 'Ab-LTMR.NSG2--C-NP.SST': 7.407, 'A-PEP.CHRNA7_SLC18A3--C-NP.MRGPRX1_MRGPRX4': 7.294, 'A-Propr.PCDH8--C-NP.MRGPRX1_MRGPRX4': 8.429, 'ATF3--C-NP.MRGPRX1_MRGPRX4': 6.989, 'C-NP.MRGPRX1_MRGPRX4--C-NP.MRGPRX1_MRGPRX4': 3.228, 'C-NP.MRGPRX1_MRGPRX4--C-PEP.ADORA2B': 7.582, 'C-NP.MRGPRX1_MRGPRX4--C-PEP.TAC1_CACNG5': 7.448, 'C-NP.MRGPRX1_MRGPRX4--C-PEP.TAC1_CHRNA3': 7.015, 'C-NP.MRGPRX1_MRGPRX4--C-Thermo.RXFP1': 7.225, 'C-NP.MRGPRX1_MRGPRX4--C-Thermo.TRPM8': 8.228, 'A-LTMR.TAC3--A-Propr.PCDH8': 7.793, 'A-Propr.EPHA3--A-Propr.PCDH8': 7.407, 'A-Propr.HAPLN4--A-Propr.PCDH8': 7.736, 'A-Propr.PCDH8--Ab-LTMR.CCKAR': 8.061, 'A-Propr.PCDH8--C-NP.SST': 7.631, 'A-Propr.PCDH8--C-Thermo.RXFP1': 7.918, 'C-PEP.TAC1_CHRNA3--C-PEP.TAC1_CHRNA3': 3.145, 'ATF3--ATF3': 3.061, 'C-Thermo.TRPM8--C-Thermo.TRPM8': 3.253, 'A-PEP.CHRNA7_SLC18A3--A-Propr.EPHA3': 9.017, 'A-PEP.KIT--A-Propr.EPHA3': 7.854, 'A-Propr.EPHA3--Ab-LTMR.CCKAR': 7.987, 'A-Propr.EPHA3--Ab-LTMR.ETV1': 8.547, 'A-Propr.EPHA3--Ab-LTMR.NSG2': 8.141, 'A-Propr.EPHA3--C-PEP.ADORA2B': 7.987, 'A-Propr.EPHA3--C-PEP.TAC1_CACNG5': 8.547, 'C-PEP.ADORA2B--C-PEP.ADORA2B': 2.921, 'A-LTMR.TAC3--A-Propr.HAPLN4': 7.491, 'A-Propr.HAPLN4--C-Thermo.RXFP1': 7.331, 'C-Thermo.RXFP1--C-Thermo.RXFP1': 2.922, 'A-PEP.NTRK3_S100A16--A-PEP.NTRK3_S100A16': 3.246, 'C-NP.SST--C-NP.SST': 2.83, 'C-NP.MRGPRX1_GFRA2--C-NP.MRGPRX1_GFRA2': 3.585, 'A-PEP.CHRNA7_SLC18A3--C-NP.SST': 7.491, 'ATF3--C-NP.SST': 6.619, 'C-NP.MRGPRX1_GFRA2--C-NP.SST': 7.491, 'C-NP.SST--C-PEP.ADORA2B': 7.448, 'A-PEP.CHRNA7_SLC18A3--A-PEP.SCGN_ADRA2C': 8.228, 'A-PEP.NTRK3_S100A16--A-PEP.SCGN_ADRA2C': 8.228, 'A-PEP.SCGN_ADRA2C--A-PEP.SCGN_ADRA2C': 3.15, 'A-PEP.SCGN_ADRA2C--A-Propr.EPHA3': 8.68, 'A-PEP.SCGN_ADRA2C--A-Propr.HAPLN4': 8.429, 'A-PEP.SCGN_ADRA2C--ATF3': 7.793, 'A-PEP.SCGN_ADRA2C--Ab-LTMR.CCKAR': 8.547, 'A-PEP.SCGN_ADRA2C--Ab-LTMR.ETV1': 9.528, 'A-PEP.SCGN_ADRA2C--C-NP.MRGPRX1_GFRA2': 7.987, 'A-PEP.SCGN_ADRA2C--C-NP.MRGPRX1_MRGPRX4': 7.854, 'A-PEP.SCGN_ADRA2C--C-PEP.TAC1_CACNG5': 8.324, 'A-PEP.SCGN_ADRA2C--C-PEP.TAC1_CHRNA3': 8.061, 'A-PEP.SCGN_ADRA2C--C-Thermo.RXFP1': 7.854, 'ATF3--C-NP.MRGPRX1_GFRA2': 7.161, 'C-LTMR.CDH9--C-Thermo.TRPM8': 7.448, 'A-Propr.HAPLN4--ATF3': 7.259, 'A-PEP.NTRK3_S100A16--C-NP.MRGPRX1_MRGPRX4': 7.161, 'C-LTMR.CDH9--C-NP.MRGPRX1_MRGPRX4': 7.225, 'C-NP.MRGPRX1_GFRA2--C-NP.MRGPRX1_MRGPRX4': 7.192, 'C-NP.MRGPRX1_MRGPRX4--C-NP.SST': 7.192, 'A-LTMR.TAC3--A-LTMR.TAC3': 2.983, 'A-LTMR.TAC3--ATF3': 7.161, 'A-PEP.KIT--ATF3': 7.225, 'A-Propr.EPHA3--ATF3': 7.368, 'A-PEP.NTRK3_S100A16--ATF3': 7.331, 'A-LTMR.TAC3--C-NP.MRGPRX1_MRGPRX4': 8.141, 'A-PEP.KIT--C-NP.MRGPRX1_MRGPRX4': 8.061, 'A-Propr.HAPLN4--C-NP.MRGPRX1_MRGPRX4': 7.582, 'Ab-LTMR.CCKAR--C-NP.MRGPRX1_MRGPRX4': 7.793, 'Ab-LTMR.ETV1--C-NP.MRGPRX1_MRGPRX4': 9.24, 'Ab-LTMR.LGI2--C-NP.MRGPRX1_MRGPRX4': 8.547, 'A-PEP.CHRNA7_SLC18A3--C-Thermo.RXFP1': 7.631, 'A-PEP.NTRK3_S100A16--C-Thermo.RXFP1': 7.071, 'ATF3--C-Thermo.RXFP1': 7.071, 'C-NP.MRGPRX1_GFRA2--C-Thermo.RXFP1': 7.491, 'C-NP.SST--C-Thermo.RXFP1': 6.842, 'C-PEP.ADORA2B--C-Thermo.RXFP1': 7.448, 'A-PEP.KIT--C-LTMR.CDH9': 7.407, 'ATF3--C-LTMR.CDH9': 6.82, 'C-LTMR.CDH9--C-NP.SST': 6.798, 'C-LTMR.CDH9--C-PEP.ADORA2B': 7.259, 'A-PEP.CHRNA7_SLC18A3--A-Propr.PCDH8': 8.68, 'A-PEP.NTRK3_S100A16--A-Propr.PCDH8': 8.141, 'A-Propr.PCDH8--ATF3': 7.368, 'A-Propr.PCDH8--Ab-LTMR.NSG2': 8.324, 'A-Propr.PCDH8--C-NP.MRGPRX1_GFRA2': 8.68, 'A-PEP.CHRNA7_SLC18A3--C-PEP.TAC1_CHRNA3': 7.368, 'C-LTMR.CDH9--C-PEP.TAC1_CHRNA3': 7.331, 'A-Propr.EPHA3--C-NP.SST': 7.535, 'A-PEP.KIT--C-PEP.ADORA2B': 7.854, 'A-Propr.HAPLN4--C-PEP.ADORA2B': 7.736, 'A-Propr.PCDH8--C-PEP.ADORA2B': 7.918, 'ATF3--C-PEP.ADORA2B': 7.1, 'C-PEP.ADORA2B--C-Thermo.TRPM8': 8.324, 'C-LTMR.CDH9--C-Thermo.RXFP1': 7.015, 'C-PEP.TAC1_CACNG5--C-Thermo.RXFP1': 7.535, 'C-PEP.TAC1_CHRNA3--C-Thermo.RXFP1': 7.491, 'A-Propr.HAPLN4--C-NP.SST': 7.1, 'Ab-LTMR.ETV1--C-NP.SST': 7.631, 'C-NP.SST--C-PEP.TAC1_CHRNA3': 7.331, 'A-LTMR.TAC3--Ab-LTMR.NSG2': 7.918, 'Ab-LTMR.CCKAR--Ab-LTMR.NSG2': 8.228, 'Ab-LTMR.LGI2--Ab-LTMR.NSG2': 8.68, 'A-LTMR.TAC3--A-PEP.KIT': 7.987, 'A-PEP.KIT--A-Propr.HAPLN4': 7.682, 'A-PEP.KIT--A-Propr.PCDH8': 7.918, 'A-PEP.KIT--Ab-LTMR.CCKAR': 7.854, 'A-PEP.KIT--C-NP.SST': 7.294, 'A-PEP.KIT--C-Thermo.RXFP1': 7.631, 'A-PEP.NTRK3_S100A16--Ab-LTMR.NSG2': 9.528, 'Ab-LTMR.NSG2--C-PEP.TAC1_CHRNA3': 8.429, 'ATF3--C-PEP.TAC1_CACNG5': 7.368, 'ATF3--C-PEP.TAC1_CHRNA3': 7.071, 'A-PEP.NTRK3_S100A16--C-NP.SST': 7.407, 'Ab-LTMR.LGI2--C-NP.SST': 7.582, 'C-NP.SST--C-PEP.TAC1_CACNG5': 7.682, 'C-NP.SST--C-Thermo.TRPM8': 7.854, 'A-PEP.CHRNA7_SLC18A3--ATF3': 7.582, 'ATF3--Ab-LTMR.CCKAR': 7.448, 'ATF3--Ab-LTMR.LGI2': 7.918, 'Ab-LTMR.CCKAR--C-NP.SST': 7.682, 'Ab-LTMR.CCKAR--C-PEP.ADORA2B': 7.987, 'Ab-LTMR.CCKAR--C-PEP.TAC1_CACNG5': 8.061, 'Ab-LTMR.CCKAR--C-PEP.TAC1_CHRNA3': 7.582, 'Ab-LTMR.CCKAR--C-Thermo.RXFP1': 7.793, 'Ab-LTMR.CCKAR--C-Thermo.TRPM8': 7.987, 'A-LTMR.TAC3--C-PEP.TAC1_CHRNA3': 8.228, 'A-PEP.KIT--C-PEP.TAC1_CHRNA3': 8.547, 'A-PEP.NTRK3_S100A16--C-PEP.TAC1_CHRNA3': 7.294, 'A-Propr.HAPLN4--C-PEP.TAC1_CHRNA3': 7.631, 'Ab-LTMR.ETV1--C-PEP.TAC1_CHRNA3': 8.429, 'Ab-LTMR.LGI2--C-PEP.TAC1_CHRNA3': 8.835, 'Ab-LTMR.LGI2--C-LTMR.CDH9': 7.736, 'Ab-LTMR.LGI2--C-NP.MRGPRX1_GFRA2': 8.429, 'Ab-LTMR.LGI2--C-Thermo.RXFP1': 8.061, 'A-PEP.KIT--Ab-LTMR.NSG2': 7.793, 'Ab-LTMR.NSG2--C-NP.MRGPRX1_MRGPRX4': 8.429, 'Ab-LTMR.NSG2--C-Thermo.RXFP1': 7.631, 'A-Propr.EPHA3--C-NP.MRGPRX1_MRGPRX4': 8.429, 'A-LTMR.TAC3--Ab-LTMR.CCKAR': 7.918, 'Ab-LTMR.CCKAR--Ab-LTMR.LGI2': 8.061, 'A-PEP.CHRNA7_SLC18A3--A-PEP.NTRK3_S100A16': 7.854, 'A-PEP.NTRK3_S100A16--C-NP.MRGPRX1_GFRA2': 7.368, 'A-PEP.NTRK3_S100A16--C-PEP.ADORA2B': 7.736, 'A-PEP.CHRNA7_SLC18A3--C-NP.MRGPRX1_GFRA2': 7.736, 'A-Propr.HAPLN4--C-NP.MRGPRX1_GFRA2': 7.918, 'Ab-LTMR.NSG2--C-NP.MRGPRX1_GFRA2': 9.24, 'C-LTMR.CDH9--C-NP.MRGPRX1_GFRA2': 7.535, 'A-PEP.CHRNA7_SLC18A3--A-Propr.HAPLN4': 7.987, 'A-PEP.NTRK3_S100A16--A-Propr.HAPLN4': 7.854, 'A-Propr.EPHA3--A-Propr.HAPLN4': 7.631, 'A-Propr.HAPLN4--Ab-LTMR.LGI2': 8.141, 'A-Propr.HAPLN4--C-PEP.TAC1_CACNG5': 8.228, 'A-PEP.CHRNA7_SLC18A3--C-LTMR.CDH9': 7.294, 'A-LTMR.TAC3--A-PEP.SCGN_ADRA2C': 8.141, 'A-LTMR.TAC3--Ab-LTMR.LGI2': 8.429, 'A-LTMR.TAC3--C-NP.MRGPRX1_GFRA2': 8.061, 'A-LTMR.TAC3--C-NP.SST': 7.448, 'A-LTMR.TAC3--C-PEP.ADORA2B': 7.854, 'A-LTMR.TAC3--C-PEP.TAC1_CACNG5': 8.324, 'A-PEP.NTRK3_S100A16--A-Propr.EPHA3': 8.061, 'A-PEP.NTRK3_S100A16--Ab-LTMR.CCKAR': 8.141, 'A-PEP.NTRK3_S100A16--C-LTMR.CDH9': 7.225, 'Ab-LTMR.LGI2--C-Thermo.TRPM8': 8.68, 'A-PEP.KIT--A-PEP.SCGN_ADRA2C': 8.547, 'A-PEP.SCGN_ADRA2C--A-Propr.PCDH8': 9.528, 'A-PEP.SCGN_ADRA2C--Ab-LTMR.LGI2': 9.933, 'A-PEP.SCGN_ADRA2C--C-LTMR.CDH9': 7.631, 'A-PEP.SCGN_ADRA2C--C-NP.SST': 7.987, 'A-PEP.SCGN_ADRA2C--C-PEP.ADORA2B': 8.324, 'C-LTMR.CDH9--C-PEP.TAC1_CACNG5': 7.448, 'A-Propr.HAPLN4--Ab-LTMR.CCKAR': 8.061, 'A-LTMR.TAC3--A-Propr.EPHA3': 7.682, 'A-LTMR.TAC3--C-LTMR.CDH9': 7.736, 'A-LTMR.TAC3--C-Thermo.RXFP1': 7.793, 'A-LTMR.TAC3--C-Thermo.TRPM8': 8.061, 'A-LTMR.TAC3--Ab-LTMR.ETV1': 8.429, 'A-Propr.PCDH8--Ab-LTMR.ETV1': 8.835, 'ATF3--Ab-LTMR.ETV1': 8.547, 'Ab-LTMR.CCKAR--Ab-LTMR.ETV1': 8.835, 'Ab-LTMR.ETV1--Ab-LTMR.LGI2': 9.24, 'Ab-LTMR.ETV1--Ab-LTMR.NSG2': 9.24, 'A-PEP.CHRNA7_SLC18A3--C-PEP.ADORA2B': 7.736, 'A-PEP.KIT--Ab-LTMR.LGI2': 8.429, 'A-PEP.KIT--C-Thermo.TRPM8': 8.061, 'Ab-LTMR.NSG2--C-PEP.ADORA2B': 8.061, 'Ab-LTMR.NSG2--C-PEP.TAC1_CACNG5': 8.835, 'A-Propr.PCDH8--C-LTMR.CDH9': 8.061, 'A-Propr.HAPLN4--C-Thermo.TRPM8': 8.429, 'A-Propr.EPHA3--C-PEP.TAC1_CHRNA3': 8.68, 'A-LTMR.TAC3--A-PEP.CHRNA7_SLC18A3': 8.141, 'A-PEP.CHRNA7_SLC18A3--A-PEP.KIT': 8.141, 'ATF3--C-Thermo.TRPM8': 7.793, 'Ab-LTMR.ETV1--C-Thermo.RXFP1': 8.429, 'C-Thermo.RXFP1--C-Thermo.TRPM8': 7.736, 'A-Propr.EPHA3--C-NP.MRGPRX1_GFRA2': 8.835, 'A-Propr.EPHA3--C-Thermo.RXFP1': 7.582, 'A-Propr.EPHA3--Ab-LTMR.LGI2': 8.835, 'A-Propr.PCDH8--C-PEP.TAC1_CACNG5': 9.017, 'A-Propr.HAPLN4--C-LTMR.CDH9': 7.448, 'A-PEP.CHRNA7_SLC18A3--C-PEP.TAC1_CACNG5': 7.793, 'A-PEP.NTRK3_S100A16--C-PEP.TAC1_CACNG5': 7.736, 'C-NP.MRGPRX1_GFRA2--C-PEP.TAC1_CACNG5': 7.582, 'C-PEP.ADORA2B--C-PEP.TAC1_CACNG5': 7.987, 'Ab-LTMR.CCKAR--C-NP.MRGPRX1_GFRA2': 8.324, 'Ab-LTMR.ETV1--C-NP.MRGPRX1_GFRA2': 9.24, 'C-NP.MRGPRX1_GFRA2--C-PEP.ADORA2B': 7.491, 'C-NP.MRGPRX1_GFRA2--C-PEP.TAC1_CHRNA3': 7.448, 'A-PEP.KIT--C-NP.MRGPRX1_GFRA2': 7.987, 'A-PEP.KIT--C-PEP.TAC1_CACNG5': 8.429, 'A-PEP.NTRK3_S100A16--C-Thermo.TRPM8': 8.429, 'Ab-LTMR.ETV1--C-LTMR.CDH9': 7.987, 'Ab-LTMR.ETV1--C-PEP.ADORA2B': 8.68, 'Ab-LTMR.ETV1--C-PEP.TAC1_CACNG5': 9.24, 'Ab-LTMR.ETV1--C-Thermo.TRPM8': 9.528, 'Ab-LTMR.LGI2--C-PEP.ADORA2B': 8.228, 'C-PEP.TAC1_CACNG5--C-Thermo.TRPM8': 8.835, 'Ab-LTMR.CCKAR--C-LTMR.CDH9': 7.736, 'A-LTMR.TAC3--A-PEP.NTRK3_S100A16': 7.793, 'A-PEP.KIT--A-PEP.NTRK3_S100A16': 8.141, 'A-PEP.NTRK3_S100A16--Ab-LTMR.LGI2': 8.835, 'C-NP.MRGPRX1_GFRA2--C-Thermo.TRPM8': 8.141, 'A-Propr.PCDH8--C-PEP.TAC1_CHRNA3': 8.835, 'A-PEP.CHRNA7_SLC18A3--Ab-LTMR.LGI2': 8.324, 'Ab-LTMR.LGI2--C-PEP.TAC1_CACNG5': 9.24, 'C-PEP.ADORA2B--C-PEP.TAC1_CHRNA3': 8.141, 'A-Propr.EPHA3--C-Thermo.TRPM8': 8.141, 'A-Propr.PCDH8--C-Thermo.TRPM8': 8.228, 'C-PEP.TAC1_CACNG5--C-PEP.TAC1_CHRNA3': 8.061, 'A-Propr.EPHA3--C-LTMR.CDH9': 7.918, 'A-PEP.NTRK3_S100A16--Ab-LTMR.ETV1': 9.24, 'C-PEP.TAC1_CHRNA3--C-Thermo.TRPM8': 8.324, 'Ab-LTMR.NSG2--C-Thermo.TRPM8': 8.141, 'A-Propr.PCDH8--Ab-LTMR.LGI2': 8.835, 'A-PEP.CHRNA7_SLC18A3--Ab-LTMR.CCKAR': 8.061, 'A-PEP.SCGN_ADRA2C--C-Thermo.TRPM8': 9.24, 'A-PEP.CHRNA7_SLC18A3--C-Thermo.TRPM8': 9.017, 'A-Propr.HAPLN4--Ab-LTMR.ETV1': 9.017, 'A-PEP.SCGN_ADRA2C--Ab-LTMR.NSG2': 9.933, 'A-PEP.KIT--Ab-LTMR.ETV1': 8.68}}
+  seed: 42
+  weighting: attraction weight = -ln(layer_c endpoint pair count / total edges), one bucket per distinct type
+  nodes=9940 edges=41207
+  fallback: 0 isolated nodes ring-placed per layer at z={'Ab-LTMR.CCKAR': -1422.8857421874998, 'Ab-LTMR.LGI2': -1287.3728143601188, 'Ab-LTMR.NSG2': -1151.8598865327378, 'Ab-LTMR.ETV1': -1016.346958705357, 'A-Propr.HAPLN4': -880.834030877976, 'A-PEP.NTRK3_S100A16': -745.3211030505952, 'A-PEP.SCGN_ADRA2C': -609.8081752232142, 'A-PEP.CHRNA7_SLC18A3': -474.29524739583326, 'ATF3': -338.78231956845235, 'A-Propr.PCDH8': -203.2693917410714, 'A-Propr.EPHA3': -67.75646391369047, 'C-PEP.TAC1_CHRNA3': 67.75646391369047, 'C-PEP.TAC1_CACNG5': 203.2693917410714, 'C-LTMR.CDH9': 338.78231956845235, 'C-Thermo.TRPM8': 474.29524739583326, 'C-PEP.ADORA2B': 609.8081752232142, 'A-PEP.KIT': 745.3211030505952, 'A-LTMR.TAC3': 880.834030877976, 'C-Thermo.RXFP1': 1016.346958705357, 'C-NP.SST': 1151.8598865327378, 'C-NP.MRGPRX1_MRGPRX4': 1287.3728143601188, 'C-NP.MRGPRX1_GFRA2': 1422.8857421874998}
+
+[2026-10-08T18:27:55+00:00] base=n2vbal_tsne_1 status=OK elapsed=35.6s
+  method: node2vec (p=1, q=1) embedding + openTSNE(3D), giant component only
+  call: cugraph.node2vec_random_walks(G, 10 walks/node, max_depth=29, p=1, q=1, random_state=42) [GPU] -> gensim Word2Vec(sg=1, vector_size=64).fit(window=10, min_count=1, seed=42, workers=16) [workers>1: not bit-reproducible] -> openTSNE.TSNE(n_components=3, perplexity=30, metric='cosine', negative_gradient_method='bh', initialization='pca', random_state=42)
+  params: {'p': 1, 'q': 1, 'dimensions': 64, 'walk_length': 30, 'num_walks': 10, 'workers': 16, 'seed': 42, 'gpu': True, 'tsne_perplexity': 30, 'tsne_negative_gradient_method': 'bh'}
+  seed: 42
+  weighting: none (unweighted random walks)
+  nodes=9940 edges=41207
+  fallback: 0 nodes outside the giant component placed via Fibonacci-sphere shell, radius_factor=1.35
+
+########################################################################
+# cmd: run_layouts.py -i tmp/data/pain_enriched -o tmp/runs/run_20261008-201032 --no-run-folder --no-report --only hyp_1 --entity-column gene --layer-order-strategy auto --feature-column GO_Biological_Process_2025_a,Reactome_Pathways_2024_a --focus-column is_seed_c --focus-value seed --score-column rwr_in_layer_n --edge-type-from-nodes layer_c
+# started: 2026-10-09T05:32:02+00:00
+# cwd: /mnt/c/Users/john/ines_ww_ml/multilayer_layout_experiments
+# python: /home/ph/miniforge3/envs/mlayout/bin/python (3.12.15)
+# input: /mnt/c/Users/john/ines_ww_ml/multilayer_layout_experiments/tmp/data/pain_enriched
+# output: /mnt/c/Users/john/ines_ww_ml/multilayer_layout_experiments/tmp/runs/run_20261008-201032
+# graph: nodes=9940 edges=41207 components=1 giant=9940 isolated=0
+# columns: id=id layer=layer_c type=type_a features=GO_Biological_Process_2025_a,Reactome_Pathways_2024_a entity=gene focus=is_seed_c score=rwr_in_layer_n source=source target=target edge_type=edge_type_c edge_type_from=layer_c
+# layers: layer_c order=C-Thermo.TRPM8,C-PEP.TAC1_CACNG5,C-PEP.TAC1_CHRNA3,C-NP.MRGPRX1_GFRA2,C-NP.MRGPRX1_MRGPRX4,C-PEP.ADORA2B,C-Thermo.RXFP1,C-NP.SST,C-LTMR.CDH9,A-PEP.KIT,A-LTMR.TAC3,ATF3,A-PEP.CHRNA7_SLC18A3,A-PEP.NTRK3_S100A16,A-Propr.EPHA3,A-Propr.PCDH8,A-Propr.HAPLN4,A-PEP.SCGN_ADRA2C,Ab-LTMR.CCKAR,Ab-LTMR.NSG2,Ab-LTMR.LGI2,Ab-LTMR.ETV1 (C-Thermo.TRPM8=514, C-PEP.TAC1_CACNG5=515, C-PEP.TAC1_CHRNA3=514, C-NP.MRGPRX1_GFRA2=390, C-NP.MRGPRX1_MRGPRX4=468, C-PEP.ADORA2B=565, C-Thermo.RXFP1=538, C-NP.SST=562, C-LTMR.CDH9=393, A-PEP.KIT=499, A-LTMR.TAC3=546, ATF3=414, A-PEP.CHRNA7_SLC18A3=433, A-PEP.NTRK3_S100A16=419, A-Propr.EPHA3=443, A-Propr.PCDH8=432, A-Propr.HAPLN4=400, A-PEP.SCGN_ADRA2C=369, Ab-LTMR.CCKAR=401, Ab-LTMR.NSG2=396, Ab-LTMR.LGI2=402, Ab-LTMR.ETV1=327) [inferred: node count descending, ties by first appearance]
+# entities (gene): 4203 distinct, 2464 occur in >=2 nodes (8201 nodes), max 13 copies
+# edge types (layer_c endpoint pair): 253 distinct: C-NP.SST--C-NP.SST=2432, C-PEP.ADORA2B--C-PEP.ADORA2B=2220, C-Thermo.RXFP1--C-Thermo.RXFP1=2218, A-LTMR.TAC3--A-LTMR.TAC3=2087, A-PEP.KIT--A-PEP.KIT=2080, A-PEP.CHRNA7_SLC18A3--A-PEP.CHRNA7_SLC18A3=1992, C-PEP.TAC1_CACNG5--C-PEP.TAC1_CACNG5=1962, ATF3--ATF3=1931, ... 245 more
+# gpu: on (NVIDIA GeForce RTX 5090; cuGraph 25.10.01, cuML 25.10.00); cpu workers: 16 (not bit-reproducible)
+# selected: 1 layout(s): hyp_1
+# rebuilt tmp/runs/run_20261008-201032/nodes.tsv from tmp/data/pain_enriched/nodes.tsv + 366 layout column(s) carried over from the previous run (layouts now present: ['aligned', 'alignedumap_r001_1', 'alignedumap_r1_1', 'backbone_e03_1', 'backbone_e05_1', 'columns_w10_1', 'columns_w1_1', 'community_1', 'domaintouch_1', 'engine_stress_free_1', 'engine_tfdp_free_1', 'engine_tfdp_shells_1', 'engine_tfdp_sphere_1', 'enrich_GO_Biological_Process_2025_a_blend25_1', 'enrich_GO_Biological_Process_2025_a_blend50_1', 'enrich_GO_Biological_Process_2025_a_blend75_1', 'enrich_GO_Biological_Process_2025_a_funcstack_1', 'enrich_GO_Biological_Process_2025_a_height_1', 'enrich_GO_Biological_Process_2025_a_hyper_1', 'enrich_GO_Biological_Process_2025_a_magnets_1', 'enrich_GO_Biological_Process_2025_a_shells_1', 'enrich_GO_Biological_Process_2025_a_snf_1', 'enrich_GO_Biological_Process_2025_a_termcols_1', 'enrich_GO_Biological_Process_2025_a_umapand_1', 'enrich_Reactome_Pathways_2024_a_blend25_1', 'enrich_Reactome_Pathways_2024_a_blend50_1', 'enrich_Reactome_Pathways_2024_a_blend75_1', 'enrich_Reactome_Pathways_2024_a_funcstack_1', 'enrich_Reactome_Pathways_2024_a_height_1', 'enrich_Reactome_Pathways_2024_a_hyper_1', 'enrich_Reactome_Pathways_2024_a_magnets_1', 'enrich_Reactome_Pathways_2024_a_shells_1', 'enrich_Reactome_Pathways_2024_a_snf_1', 'enrich_Reactome_Pathways_2024_a_termcols_1', 'enrich_Reactome_Pathways_2024_a_umapand_1', 'enrich_all_blend25_1', 'enrich_all_blend50_1', 'enrich_all_blend75_1', 'enrich_all_funcstack_1', 'enrich_all_height_1', 'enrich_all_hyper_1', 'enrich_all_magnets_1', 'enrich_all_shells_1', 'enrich_all_snf_1', 'enrich_all_termcols_1', 'enrich_all_umapand_1', 'fa2_1', 'fa2_2', 'fa2_3', 'fa2rarity_1', 'fa2sep_1', 'fa2spectral_1', 'feature_GO_Biological_Process_2025_a_fa2_1', 'feature_GO_Biological_Process_2025_a_landscape_1', 'feature_Reactome_Pathways_2024_a_fa2_1', 'feature_Reactome_Pathways_2024_a_landscape_1', 'feature_all_fa2_1', 'feature_all_landscape_1', 'focus_core_1', 'focus_fisheye_1', 'focus_geo_1', 'focus_geobands_1', 'focus_hyp_1', 'focus_shell_1', 'focus_tree_1', 'geom_dome_1', 'geom_domes_1', 'geom_hilbertlayer_1', 'geom_mapper_1', 'geom_nested_1', 'geom_nestedlayer_1', 'geom_terrain_1', 'geom_terraintiles_1', 'graphdr_tsne_1', 'graphdr_tsne_hop3_1', 'graphdr_tsne_x4_1', 'joint_suprarwr_1', 'joint_suprarwr_w10_1', 'metapath_1', 'n2vbal_1', 'n2vbal_pacmap_1', 'n2vbal_tsne_1', 'n2vbfs_1', 'n2vdfs_pacmap_1', 'n2vred_hnne_bal_1', 'n2vred_localmap_bal_1', 'n2vred_trimap_bal_1', 'rwr_1', 'spokes_degree_1', 'spokes_degree_needle_1', 'spokes_score_1', 'stack', 'sumap_community_1', 'sumap_layer_1', 'sumap_theme_1', 'supra_w0p1_1', 'supra_w10_1', 'supra_w1_1', 'tiles_cyl2_free_curved_1', 'tiles_cyl2_free_sradial_curved_1', 'tiles_cyl3_free_1', 'tiles_cyl3_free_curved_1', 'tiles_grid_free_1', 'tiles_grid_free_gib_1', 'tiles_helix_free_1', 'tiles_hemi_free_1', 'tiles_hemi_free_curved_1', 'tiles_hemi_free_gib_1', 'tiles_hemi_free_rim_1', 'tiles_hemi_free_slift_1', 'tiles_hemi_free_sradial_1', 'tiles_meta_free_1', 'tiles_pages_free_1', 'tiles_ring_free_curved_1', 'tiles_sphere_aligned_curved_1', 'tiles_sphere_free_1', 'tiles_sphere_free_curved_1', 'tiles_sphere_free_rim_1', 'tiles_stack_aligned_1', 'tiles_stack_free_1', 'tiles_stack_half_1', 'tiles_star_free_1', 'tiles_star_free_gib_1', 'topobet_1'])
+# copied tmp/data/pain_enriched/edges.tsv -> tmp/runs/run_20261008-201032/edges.tsv
+########################################################################
+
+[2026-10-09T05:34:41+00:00] base=hyp_1 status=OK elapsed=114.4s
+  method: Hyperbolic-radius layout: r=1-tanh(degree/beta) (Poincare-ball-inspired, per arXiv:2505.20378), theta from fa2_1 azimuth, phi banded by layer
+  call: r=(1-tanh(degree/beta))*HYP_RADIUS_SCALE; theta=atan2(fa2_1 xy); phi=layer band
+  params: {'beta': 8.2911, 'radius_scale': 50.0, 'layer_polar_angle': {'C-Thermo.TRPM8': 0.5236, 'C-PEP.TAC1_CACNG5': 0.6233, 'C-PEP.TAC1_CHRNA3': 0.7231, 'C-NP.MRGPRX1_GFRA2': 0.8228, 'C-NP.MRGPRX1_MRGPRX4': 0.9225, 'C-PEP.ADORA2B': 1.0223, 'C-Thermo.RXFP1': 1.122, 'C-NP.SST': 1.2217, 'C-LTMR.CDH9': 1.3215, 'A-PEP.KIT': 1.4212, 'A-LTMR.TAC3': 1.5209, 'ATF3': 1.6207, 'A-PEP.CHRNA7_SLC18A3': 1.7204, 'A-PEP.NTRK3_S100A16': 1.8201, 'A-Propr.EPHA3': 1.9199, 'A-Propr.PCDH8': 2.0196, 'A-Propr.HAPLN4': 2.1193, 'A-PEP.SCGN_ADRA2C': 2.2191, 'Ab-LTMR.CCKAR': 2.3188, 'Ab-LTMR.NSG2': 2.4185, 'Ab-LTMR.LGI2': 2.5183, 'Ab-LTMR.ETV1': 2.618}}
+  seed: 42
+  weighting: none
+  nodes=9940 edges=41207
+  fallback: isolated (degree-0) nodes land exactly on the boundary (r=HYP_RADIUS_SCALE) automatically via r=(1-tanh(0/beta))=1 -- no separate fallback placement needed; 6766 near-coincident nodes separated (c.separate_coincident)
+

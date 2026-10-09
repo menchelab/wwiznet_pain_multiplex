@@ -3,23 +3,76 @@
   "exportType": "asdf10k-local-storage",
   "dataset": "data",
   "presets": {
-    "deff": {
-      "nodeSizeScaling": 0.92,
-      "nodeMinSize": 0.14,
-      "edgeWidthScaling": 2.5,
-      "edgeMinWidth": 1.68,
+    "test": {
+      "nodeSizeScaling": 1.7435,
+      "nodeMinSize": 0.005,
+      "edgeWidthScaling": 9.1,
+      "edgeMinWidth": 2,
       "nodeSizeAttribute": "degree_n",
-      "nodeColorAttribute": "layer_c",
-      "nodeMeshAttribute": "degree_n",
-      "edgeWidthAttribute": "weight_n",
-      "edgeColorAttribute": "weight_n",
+      "nodeColorAttribute": "omim_n_sig_terms_n",
+      "nodeMeshAttribute": "any_sig_enrichment_c",
+      "edgeWidthAttribute": "source_count_n",
+      "edgeColorAttribute": "source_count_n",
       "edgeCutoff": 0,
       "nodeSizeScalingMethod": "linear",
       "nodeColorScalingMethod": "linear",
       "edgeWidthScalingMethod": "linear",
       "edgeColorScalingMethod": "linear",
       "nodeMeshScalingMethod": "linear",
-      "edgeOpacity": 0.11,
+      "edgeOpacity": 0.17,
+      "edgeBlending": "additive",
+      "edgeAlphaByWeight": true,
+      "edgeAlphaMin": 0.1,
+      "edgeAlphaMax": 0.8,
+      "edgeFadeDistance": 0.7,
+      "edgeDensityMode": false,
+      "edgeDensityScale": 2,
+      "highlightNodeSizeScale": 1,
+      "highlightEdgeWidthScale": 0.2,
+      "highlightNodesEnabled": true,
+      "highlightEdgesEnabled": false,
+      "subsetEdgesOnly": true,
+      "edgeSubsetMode": "induced",
+      "highlightEdgeOpacity": 1,
+      "fadeOtherEdgesEnabled": false,
+      "fadeOtherEdgesOpacity": 0.3,
+      "enabled": true,
+      "distance": 1200,
+      "enableDynamicResolution": false,
+      "targetFPS": 60,
+      "resolutionScale": 1,
+      "bloomMode": "selection",
+      "bloomStrength": 0.95,
+      "bloomRadius": 0.15,
+      "bloomThreshold": 0.54,
+      "cameraPosition": {
+        "x": -5.641390801120643,
+        "y": 12.520616678200795,
+        "z": 41.94143334789643
+      },
+      "cameraRotation": {
+        "x": -0.2901041356151403,
+        "y": -0.12817928216006397,
+        "z": 0.9052845629511483
+      }
+    },
+    "deff": {
+      "nodeSizeScaling": 2.25,
+      "nodeMinSize": 0.45,
+      "edgeWidthScaling": 9.1,
+      "edgeMinWidth": 9.05,
+      "nodeSizeAttribute": "degree_n",
+      "nodeColorAttribute": "layer_c",
+      "nodeMeshAttribute": "degree_n",
+      "edgeWidthAttribute": "weight_n",
+      "edgeColorAttribute": "layer_pair_c",
+      "edgeCutoff": 0,
+      "nodeSizeScalingMethod": "linear",
+      "nodeColorScalingMethod": "linear",
+      "edgeWidthScalingMethod": "linear",
+      "edgeColorScalingMethod": "linear",
+      "nodeMeshScalingMethod": "linear",
+      "edgeOpacity": 0.2,
       "edgeBlending": "additive",
       "edgeAlphaByWeight": true,
       "edgeAlphaMin": 0.22,
@@ -27,15 +80,15 @@
       "edgeFadeDistance": 0.7,
       "edgeDensityMode": false,
       "edgeDensityScale": 2,
-      "highlightNodeSizeScale": 1,
-      "highlightEdgeWidthScale": 2.4,
+      "highlightNodeSizeScale": 1.4,
+      "highlightEdgeWidthScale": 2.7,
       "highlightNodesEnabled": true,
       "highlightEdgesEnabled": true,
       "subsetEdgesOnly": false,
       "edgeSubsetMode": "induced",
       "highlightEdgeOpacity": 5.8,
       "fadeOtherEdgesEnabled": true,
-      "fadeOtherEdgesOpacity": 0.85,
+      "fadeOtherEdgesOpacity": 0.25,
       "enabled": true,
       "distance": 1200,
       "enableDynamicResolution": false,
@@ -46,65 +99,38 @@
       "bloomRadius": 0.1,
       "bloomThreshold": 0.5,
       "cameraPosition": {
-        "x": -33.47697236312483,
-        "y": 47.964240696877404,
-        "z": -53.55055449004767
+        "x": -172.2259923244587,
+        "y": -236.66260178905344,
+        "z": 221.61457642107337
       },
       "cameraRotation": {
-        "x": -2.4111685960359956,
-        "y": -0.435805760685275,
-        "z": 0.5644148086895007
+        "x": 0.8182224480849871,
+        "y": -0.4882886529539019,
+        "z": -0.34982352534218186
       }
     }
   },
   "lastUsedPreset": "deff",
   "subsetBuilderLibrary": [],
-  "subsetListLibrary": [
-    {
-      "name": "temp1",
-      "namesText": "12 20 71 76 109 118 166 257 280 372 402 454 457 526 528 619 622 659 690 761 765 788 853 882 845 758 86 18 464 881 536 355 515 579 803 860 626 787 213 128 838 573 40 48 51 55 62 63 497 500 276 771 169 416 776 880 163 312 79 77 81 88 103 407 115 508 512 636 863 198 613 843 596 147 152 705 807 170 171 181 182 195 247 439 725 672 581 274 275 889 281 316 340 380 408 431 436 446 477 480 734 586 747 781 564 543 547 567 615 792 823 872 634 678 773 818 713 736 617 324 742 898 682 44 386 405 374 255 424 462 1 180 343 262 568 354 891 241 356 388 440 449 722 594 719 273 847 301 520 83 186 56 188 289 561 599 894"
-    },
-    {
-      "name": "temp2",
-      "namesText": "25 123 248 354 532 645 745 891 95 164 397 726 782 839 876 40 446 567 769 853 882 75 199 213 247 311 363 493 543 563 749 490 593 841 91 439 257 622"
-    }
-  ],
   "openWindows": [
     {
-      "type": "distribution",
-      "storageKey": "popout-distribution",
-      "title": "Distributions",
+      "type": "subset-list",
+      "storageKey": "popout-subset-list",
+      "title": "subset (24)",
       "config": {
-        "selectedColumn": "rwr_score_n",
-        "rot90": true,
-        "kvUseAdaptive": true,
-        "useGlobal": true,
-        "frozen": false,
-        "bounds": {
-          "left": 74.5,
-          "top": 370,
-          "width": 484,
-          "height": 424
-        }
-      }
-    },
-    {
-      "type": "subset-builder",
-      "storageKey": "popout-subset-builder",
-      "title": "Subset builder",
-      "config": {
-        "formula": "rwr_score_n > 0.001",
-        "libraryVisible": false,
+        "namesText": "C-NP.MRGPRX1_MRGPRX4::FILIP1 C-NP.MRGPRX1_MRGPRX4::MYC C-PEP.TAC1_CACNG5::MYC A-PEP.KIT::MYC A-LTMR.TAC3::MYC C-PEP.TAC1_CHRNA3::MYC C-PEP.ADORA2B::MYC C-PEP.TAC1_CACNG5::CLIP3 C-PEP.TAC1_CHRNA3::CLIP3 C-NP.MRGPRX1_MRGPRX4::RAI14 C-NP.MRGPRX1_MRGPRX4::PRKAR1B C-PEP.ADORA2B::GNAI2 C-NP.MRGPRX1_MRGPRX4::IGF1R C-NP.MRGPRX1_MRGPRX4::P4HB C-PEP.TAC1_CACNG5::FASN C-PEP.TAC1_CACNG5::CAV1 C-PEP.TAC1_CACNG5::HSPB1 A-PEP.KIT::NELFA A-PEP.KIT::OPRM1 C-PEP.TAC1_CHRNA3::AUP1 C-PEP.TAC1_CHRNA3::OPRM1 C-PEP.TAC1_CHRNA3::HSPB1 A-LTMR.TAC3::XPO5 A-LTMR.TAC3::EDNRA",
+        "libraryVisible": true,
         "editorVisible": true,
         "bounds": {
-          "left": 51.5,
-          "top": 92,
-          "width": 384,
-          "height": 224
+          "left": 72.5,
+          "top": 653,
+          "width": 490,
+          "height": 351
         }
       }
-    },
-  "nodeLayout": "stack",
+    }
+  ],
+  "nodeLayout": "columns_w10_1",
   "ar": {
     "showBoxLines": true
   },
@@ -114,10 +140,10 @@
     "subsetEdgesOnly": false,
     "edgeSubsetMode": "induced",
     "highlightEdgesEnabled": true,
-    "highlightEdgeWidthScale": 2.4,
+    "highlightEdgeWidthScale": 2.7,
     "highlightEdgeOpacity": 5.8,
     "fadeOtherEdgesEnabled": true,
-    "fadeOtherEdgesOpacity": 0.85
+    "fadeOtherEdgesOpacity": 0.25
   },
   "sliderRanges": {
     "nodeSizeScaling": {
